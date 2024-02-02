@@ -24,4 +24,4 @@ def hello_world():
     return f"<p>{test_data}</p>"
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0")
+    app.run()

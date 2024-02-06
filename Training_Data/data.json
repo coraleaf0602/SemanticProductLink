@@ -1,13 +1,13 @@
 {
-    "projectFileVersion": "{API-VERSION}",
+    "projectFileVersion": "2022-05-01",
     "stringIndexType": "Utf16CodeUnit",
     "metadata": {
-        "projectName": "TestProject",
+        "projectName": "SemanticProductLink",
         "projectKind": "CustomEntityRecognition",
-        "description": "Trying out custom NER",
-        "language": "en-us",
+        "description": "Training data for SemanticProductLink",
+        "language": "en",
         "multilingual": false,
-        "storageInputContainerName": "test",
+        "storageInputContainerName": "training-data",
         "settings": {}
     },
     "assets": {

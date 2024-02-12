@@ -31,7 +31,6 @@ def predict():
     # Make POST request to Azure model endpoint
     url = "https://dellsemanticproductlink.cognitiveservices.azure.com/language/authoring/analyze-text/projects/hello/:import?api-version=2022-10-01-preview"
     headers = {
-        "Content-Type": "application/json",
         "Ocp-Apim-Subscription-Key": "b3bb51730d9c4d6f92abd3d817d46043"
     }
     response = requests.post(url=url, headers=headers, json=data)

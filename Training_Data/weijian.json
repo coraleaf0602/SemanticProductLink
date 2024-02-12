@@ -3,11 +3,11 @@
     "stringIndexType": "Utf16CodeUnit",
     "metadata": {
         "projectKind": "CustomEntityRecognition",
-        "storageInputContainerName": "????????",
+        "storageInputContainerName": "training-data",
         "settings": {
             "confidenceThreshold": 0
         },
-        "projectName": "??????????",
+        "projectName": "hello",
         "multilingual": false,
         "description": "",
         "language": "en"

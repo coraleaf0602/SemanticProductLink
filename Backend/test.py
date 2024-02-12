@@ -1,4 +1,5 @@
-from flask import Flask
+from flask import Flask, redirect, url_for, render_template, request, session, jsonify 
+import requests 
 
 app = Flask(__name__)
 
@@ -19,9 +20,23 @@ DisplayPort over USB-C - USB-C docking station links all devices to the laptop u
 USB 3.0 - Universal docking stations work with DisplayLink technology that enables docking features over USB. The universal docking solution enables multiple monitors, audio, Ethernet, and other USB devices to be connected to laptops through USB. Works best with USB 3.0 ports on the laptop.
 WiGig (wireless) - WiGig or wireless docking stations work with a laptop that is configured with a WiGig adapter. Only select Dell laptops support WiGig technology."""
 
+# @app.route("/")
+# def hello_world():
+#     return f"<p>{test_data}</p>"
+
 @app.route("/")
-def hello_world():
-    return f"<p>{test_data}</p>"
+def predict():
+ 
+    data = "../Training_Data/weijian.json"
+    # Make POST request to Azure model endpoint
+    url = "{https://dellsemanticproductlink.cognitiveservices.azure.com/}/language/authoring/analyze-text/projects/{hello}/:import?api-version={2022-10-01-preview}"
+    subscriptionKey = "b3bb51730d9c4d6f92abd3d817d46043"
+    response = requests.post(url=url, headers=subscriptionKey, json=data)
+
+    if response.status_code == 202:
+        return f"<p>Labels imported succesfully</p>"
+    else:
+        return f"<p>Fail</p>"
 
 if __name__ == "__main__":
-    app.run()
+    app.run(debug=True)

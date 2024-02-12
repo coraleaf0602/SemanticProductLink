@@ -27,11 +27,14 @@ WiGig (wireless) - WiGig or wireless docking stations work with a laptop that is
 @app.route("/")
 def predict():
  
-    data = "../Training_Data/weijian.json"
+    data = "/Users/zhangc/Documents/CS Year 2/Semester 2/CSU22013 Software Engineering Project I /SwEng-Group-14-SemanticProductLink/Training_Data/weijian.json"
     # Make POST request to Azure model endpoint
-    url = "{https://dellsemanticproductlink.cognitiveservices.azure.com/}/language/authoring/analyze-text/projects/{hello}/:import?api-version={2022-10-01-preview}"
-    subscriptionKey = "b3bb51730d9c4d6f92abd3d817d46043"
-    response = requests.post(url=url, headers=subscriptionKey, json=data)
+    url = "https://dellsemanticproductlink.cognitiveservices.azure.com/language/authoring/analyze-text/projects/hello/:import?api-version=2022-10-01-preview"
+    headers = {
+        "Content-Type": "application/json",
+        "Ocp-Apim-Subscription-Key": "b3bb51730d9c4d6f92abd3d817d46043"
+    }
+    response = requests.post(url=url, headers=headers, json=data)
 
     if response.status_code == 202:
         return f"<p>Labels imported succesfully</p>"

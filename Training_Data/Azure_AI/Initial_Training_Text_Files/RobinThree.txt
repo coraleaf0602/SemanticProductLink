@@ -1,0 +1,70 @@
+How to Recover Computer from Startup or POST Issues
+
+Does your Dell computer seem unresponsive after turning on and fails to startup? A Power On Self-Test (POST) issue can be caused due to a corrupt BIOS, bad connection between hardware components or faulty hardware. Some symptoms that indicate a Power On Self-Test (POST) failure are:
+
+    The computer is stuck at the Dell logo.
+    The computer beeps or the LEDs are blinking in repetitive patterns.
+    The computer turns on but does not display anything on the screen, but the fans are working.
+    The computer turns on but fails to startup and does not respond when the caps lock, scroll lock, or num lock key is pressed.
+
+If the computer turns on but it is stuck at the Windows logo or does not boot past the Windows logo, learn how to recovery your computer from a boot-related issue.
+
+No POST troubleshooting video
+
+Watch this video to learn if your Dell computer is experiencing a power on self-test (POST) issue.
+
+Follow these quick steps to recover your Dell computer from a startup or POST issue.
+
+Fix 1: Startup using minimum hardware
+
+Faulty hardware devices can cause the computer to experience startup or POST issues. To determine which device is causing the issue, let’s start the computer using minimum hardware required.
+
+    Turn off the computer.
+    Disconnect all devices such as USB drivers, printers, webcams, media cards (SD/xD), except the keyboard and mouse.
+    Turn on the computer.
+
+Fix 2: Perform a hard reset
+
+A hard reset helps drain static electricity that may be causing the power issue. To perform a hard reset, follow these steps.
+
+    Turn off the computer.
+    Disconnect the power cable (for desktop computers), or disconnect the AC adapter and remove the battery (for Dell laptops with removable battery).
+    NOTE: For Dell laptops that have a nonremovable battery, learn how to reset real time clock (RTC) to recover your Dell laptop. For Dell laptops with removable batteries, see the user guide of your Dell laptop for step-by-step instructions to safely remove the battery.
+    NOTE: On select Dell Latitude laptops, learn how to use forced ePSA to recover from a POST or boot failure.
+    Disconnect all devices such as USB drivers, printers, webcams, media cards (SD/xD), except the keyboard and mouse.
+    Press and hold the power button for 15 to 20 seconds to drain the residual power.
+
+    Press the power button
+
+    Connect the power cable (for desktop computers) or the AC adapter and battery (for laptops).
+    Turn on the computer.
+
+Fix 3: Reset the real-time clock (RTC)
+
+A corrupt BIOS can cause startup-related issues. RTC reset helps reset the BIOS settings and recover your Dell computer from a power, startup or POST, or video issues.
+
+    If the startup issue is occurring on a Dell laptop, learn how to reset real time clock (RTC) to recover your Dell laptop.
+    If the startup issue is occurring on a Dell desktop, learn how to reset real time clock (RTC) to recover your Dell desktop.
+
+Fix 4: Run a hardware diagnostic to identify a potential hardware issue
+
+A potential hardware failure with the system memory (RAM) or system board (motherboard) can cause a POST issue. Running a preboot diagnostics helps identify potential hardware issues that may be causing the startup issue.
+
+    Turn on your computer.
+    At the Dell logo, press the F12 key several times until the One Time Boot Menu appears.
+    On the boot menu screen, select the Diagnostics option and press Enter.
+
+    Diagnostics option in the One Time Boot Menu on a Dell computer
+
+    The diagnostic test begins.
+
+    Dell ePSA preboot system assessment diagnostics
+
+    NOTE: The preboot diagnostic interface may vary on your Dell computer, see the user guide of your Dell computer for product-specific information.
+
+    NOTE: The mouse is not active during testing.
+
+    NOTE: On Dell laptops, user response is required during the LCD test.
+    If there are any issues, error codes are displayed. Make a note of the error code, validation code, and service tag, and then look up the error code.
+
+If the computer fails to startup or complete POST after following the above steps, contact Dell Technical Support for repair options that are available in your location.

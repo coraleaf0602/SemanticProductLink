@@ -1,0 +1,173 @@
+Article Content
+Symptoms
+
+Dell Technologies recommends SupportAssist to keep your computer in optimal condition for your gaming needs.
+Optimize your System using SupportAssist
+
+Duration: 00:32
+Closed captions: English only
+
+
+Dell gaming laptops and desktops can render the incredible visuals that many modern games are known for. However, new games are constantly expanding their capabilities when it comes to beauty and complexity, and cutting-edge gaming requires cutting-edge gaming hardware. If you are not satisfied with your performance in the latest high-end games, you might consider upgrading to a newer, more advanced model. If, however, you would rather stick with your current laptop or desktop for a while longer, the tips in this article help you squeeze every last drop of performance out of your machine. 
+ 
+NOTE: These tips should be performed in the order that is presented below.
+Cause
+
+Updating Drivers
+Keeping the drivers updated for your graphics card or chip and processor ensures that you always get the best performance from your gaming computer. Click the appropriate links below to download the latest drivers:
+
+All Dell drivers can be found on the Dell Drivers & Downloads section of our support site. Provide your service tag for the optimal experience.
+For Intel drivers, browse to the Intel Drivers and Software page. This hyperlink is taking you to a website outside of Dell Technologies.
+For computers with NVIDIA GeForce graphics, browse to the GeForce Driver Download page. This hyperlink is taking you to a website outside of Dell Technologies.
+For computers with AMD Radeon graphics, browse to the AMD Support and Radeon Software page. This hyperlink is taking you to a website outside of Dell Technologies.
+NOTE: When you are using an integrated and extended video adapter in your computer, install the driver for the integrated video adapter first and then the driver for the extended video adapter.
+Adjusting your Settings in Windows
+There are several options and tweaks within your operating system that, while they may not provide the biggest boost in gaming performance, are easy to implement and cost nothing.
+
+Disable Window's "visual effects." These visual effects are largely decorative, and disabling them can give your computer a minor speed boost. To do this, complete the following steps for your operating system:
+Windows 10
+
+In the search bar, type "performance" and select Adjust the appearance and performance of Windows from the results.
+In the Visual Effects tab, select Adjust for best performance. Alternately, select Custom and choose which affects you want to disable.
+Click Apply.
+Windows 8/8.1
+
+In the search bar, type "adjust visual" and select Settings, followed by Adjust the appearance and performance of Windows.
+In the Visual Effects tab, select Adjust for best performance. Alternately, select Custom and choose which affects you want to disable.
+Click Apply.
+Close all nongaming applications to free up memory and processing power. Web browsers and other applications can tie up your computer’s resources and slow down your game. Close everything else before starting your game to get a noticeable boost in performance.
+Windows 10 users with the Creators Update can take advantage of Game Mode, which gives your game priority access to your computer's resources. To learn more about activating Game Mode on your computer, browse to Use Game Mode while gaming on your Windows device This hyperlink is taking you to a website outside of Dell Technologies. for more information.
+
+Adjusting your Settings In-Game
+Virtually all games come with a menu of graphics features that can be accessed from within the game. Adjusting the settings for these features can deliver a significant framerate boost at the cost of some detail quality.
+
+The easiest way to optimize your game’s settings for your computer is to use the official apps from your Graphics Processing Unit (GPU - also called a graphics or video card) manufacturer. These apps scan your computer for installed games and create an optimal settings profile for each game based on your computer’s gaming potential. This allows you to go straight to playing with the best possible balance of performance and quality.
+
+For NVIDIA-equipped computers, browse to HOW CAN I REDUCE LAG OR IMPROVE STREAMING QUALITY WHEN USING GEFORCE NOW?. This hyperlink is taking you to a website outside of Dell Technologies.
+For AMD-equipped computers, browse to the AMD Radeon Software Help Center. This hyperlink is taking you to a website outside of Dell Technologies.
+If you want to adjust your game’s graphics settings manually, keep in mind that some features have a bigger impact on performance than others, and the features that you should adjust first can vary from game to game. The following resource-heavy features can be turned down or even off to boost your performance without making a significant visual difference:
+
+Shadow effects
+Reflection effects
+Ambient occlusion
+Motion blur
+Depth of field 
+NOTE: NVIDIA and AMD may also offer optimization guides for certain games on their websites. 
+Also, you may consider checking on your display’s native resolution vs. higher resolution settings - both in-game and in Windows. Higher resolution settings like Ultra High Definition (UHD) 3840 x 2160 would be more taxing on the graphics card processing capabilities than native resolution settings like Full High Definition (FHD) 1920 x 1080, and this would have an impact in framerates. The native resolution differs with display specifications, however you can try using this setting if experiencing a low framerate on higher resolutions.
+
+Overclocking
+To "overclock" a component is to increase its clock rate beyond the manufacturer’s specifications. A faster clock rate means more operations per second, so gaming enthusiasts often overclock their processors or GPUs to squeeze a little extra power out of their existing hardware.
+
+Dell does not support manual overclocking in its gaming laptops and desktops, due to the risk of damage to components. However, certain Alienware models can be ordered "factory that is overclocked" from Dell; these computers come with Dell-approved overclock profiles that can be activated using the instructions in the Alienware Overclocking article.
+
+Using Game Shift
+Enabling Game Shift
+Game Shift improves gaming performance by increasing the fan speed for optimal thermal cooling of the processor.
+
+NOTE: Alienware Command Center and Alienware OC Controls have to be installed for Game Shift to work. See the Installing Game Shift after reinstalling the operating system section for information about how to download and install these applications.
+Game Shift is enabled by pressing the Game Shift Game Shift Key key on the computer keyboard (when the fn default is enabled; otherwise, press and hold fn, and then press Game Shift key). For more information, see the Keyboard shortcuts section of the Setup and Specifications manual for your computer.
+
+NOTE: See Dell Knlowdge Base article Manuals and Documentation for your Dell Product for information about obtaining the Setup and Specifications manual for your computer.
+Alienware Command Center displays a blue G icon, a notification appears to indicate that that Game Shift is enabled.
+
+Disabling Game Shift
+When you are not using the computer for gaming, disable Game Shift by pressing the Game Shift Game Shift Key key on the computer keyboard (when the fn default is enabled; otherwise, press and hold fn, and then press the Game Shift key).
+
+Game Shift is also disabled when:
+You set your computer to a sleep state.
+You restart your computer.
+Game Shift has been active for 24 consecutive hours.
+You start a new game.
+You terminate the game that has been running on Game Shift.
+You can change the power plans or thermal profiles of the computer.
+Installing Game Shift after reinstalling the operating system 
+Alienware Command Center and Alienware OC Controls are installed at the factory. If you reinstall the operating system, you have to reinstall Alienware Command Center, and Alienware OC Controls before you can use Game Shift.
+NOTE: Ensure that the Windows operating system and all the compatible drivers are reinstalled in your computer. Windows update is also required.
+To download and install Alienware Command Center and Alienware OC Controls perform the following steps:
+
+Browse to Dell Drivers & Downloads website.
+You are given three options to identify and obtain drivers for your Dell Product.
+Touch or click the listing for your computer under THIS PC.
+NOTE: When there is no listing for your computer under THIS PC, you can touch or click Download & Install SupportAssist, which will automatically identify your computer for you. Follow the prompts to download and install SupportAssist. For more information, browse to the Dell SupportAssist for PCs page.
+Enter the Service Tag, Dell EMC Product ID, or Model, and then touch or click the Search button (when your product does not automaly appear in the list), and select your computer from the list.
+Touch or click Browse all products: You must select the type of device you have, the brand name, and then the product model.
+NOTE: For more information, see Dell Knowledge Base article, How to Determine the Model Number of Your Dell Computer.
+Click Find drivers.
+Select the Operating System that is installed on your computer using the drop-down menu under Operating System:
+Enter Alienware Command Center Application in the Keyword: search box, and then press Enter.
+Select the check-box to the left of Alienware Command Center Application.
+Enter Alienware OC Controls Application in the Keyword: search box, and then press Enter.
+Select the check-box to the left of Alienware OC Controls Application.
+Either:
+Click the Download Selected button. to download multiple drivers.
+NOTE: The SupportAssist application may update before one or more files are downloaded.
+Touch or click Download, to download one driver or one at a time.
+Depending on your browser, you get different options. The following steps are based on using the Chrome browser.
+Once the driver is downloaded, touch or click the file that is listed at the bottom of the screen to start the installation process, and then follow the prompts.
+Restart your computer. You can now enable Game Shift (see Enabling Game Shift).
+Upgrading your Components
+If you have tried all the above options and are still unsatisfied with your gaming experience, you may want to upgrade to newer, more powerful components. Upgrading provides the biggest boost in performance, but it is also the most expensive option, and potentially the most complicated.
+
+Before you Upgrade
+Protect your investment in your Dell gaming computer by taking the following precautions before you start upgrading your components.
+
+Warranty Limitations
+
+Your Dell-branded gaming computer has a limited warranty, as are any components bought through the Dell website. If you upgrade your computer with a component from Dell, it is covered under the computer’s original warranty. If however, you purchase your component from a third party, it is warranted by the component manufacturer. While the act of upgrading your computer does not violate your Dell warranty, you should consider the following limitations:
+
+In troubleshooting your computer, Dell technicians ask you first to remove any third-party components.
+If you send your computer to Dell for repairs, you must first replace the third-party component with the Dell-branded original.
+If you damage your computer while installing a third-party component, the computer’s original warranty does not cover repairs.
+Preventing Electrostatic Discharge
+
+Upgrading your computer involves opening up your computer and touching its internals. Without the proper precautions, you risk causing electrostatic discharge (ESD) damage to your computer and to yourself. Watch the video on how to Avoid ESD Damage to learn how to properly ground yourself and your computer before opening it up. (English-only video, with subtitles available for several languages)
+
+Component Compatibility
+
+Before you order a new component for your computer, ensure it works with your existing computer! To find out what kind of components your computer already has, go to the Product Support page for your computer and find the proper document on the Manuals and documents tab. You can also get some of your component specifications from the product description on the Dell store page for your computer.
+
+Once you have found your specifications, take note of the details in the Video, Storage, and Memory categories. They guide you as you shop for compatible upgrades. 
+
+NOTE: Users in some countries or regions can use the Parts & accessories tab on the Product Support page for their computer. This tab provides direct links to upgrades that are guaranteed to work with your computer. 
+Upgrading your GPU
+Modern games demand a lot from your GPU, so upgrading this component will usually provide the biggest boost in gaming performance. However, upgrading your GPU is also the most expensive option, and is only an option for desktop computers. Laptop owners cannot upgrade their GPUs, although certain Alienware models may be able to use the Alienware Graphics Amplifier. See the product page in the Dell Store for more details about the Alienware Graphics Amplifier.
+
+NOTE: Although the Alienware Alpha models are listed as desktop computers, their GPUs cannot be removed or upgraded.
+See the guides below for specific instructions on replacing your GPU:
+
+For Alienware desktops, browse to the Installing and Replacing Parts in your Alienware Computer article, select your Alienware model from the list, and then click "Video Cards."
+For Inspiron desktops, watch our video on How to Replace a Video Card in a Dell Desktop (English-only video, with subtitles available for several languages).
+Adding a GPU (SLI/Crossfire)
+
+If you have already got the latest and greatest GPU in your computer - or if you are not ready to purchase the latest, and greatest - adding another GPU to your computer is a great way to take your gaming to new heights. It really is as simple as "more GPUs = more gaming power," although setting up a multi-GPU computer that is used to be an experimental technique practiced only by hardcore gaming enthusiasts. Now, official software from NVIDIA and AMD makes going multi-GPU relatively easy.
+
+Go to NVIDIA’s Introduction to SLI Technology page to learn more about combining NVIDIA GPUs. (English only) This hyperlink is taking you to a website outside of Dell Technologies.
+Go to AMD’s Crossfire Requirements and FAQ page to learn more about combining AMD GPUs. (English only) This hyperlink is taking you to a website outside of Dell Technologies.
+Upgrading your Hard Drive
+Tired of staring at loading screens? Solid state drives (SSDs) are several times faster than traditional spinning hard drives, meaning you will rarely wait more than a few seconds for your game to load. As a bonus, everything that is installed on the SSD gets a significant speed boost, including your Windows operating system. This is a great way to make an old, slow computer feel better than new!
+
+Upgrading your hard drive is an option for both laptop and desktop owners. See the guides below for specific instructions.
+
+For Alienware desktops and laptops, browse to the Installing and Replacing Parts in your Alienware Computer article, select your Alienware model from the list, and then click "Hard Drives."
+For desktops, watch our video on How to install a Hard Drive on Dell Desktop. (English-only video, with subtitles available in several languages) 
+For Inspiron laptops, browse our article How To Replace Hard Drive on a Dell Laptop.
+Upgrading your Memory
+For random-access memory (RAM), games usually have a "minimum" and "recommended" specification. Meeting the minimum specifications for RAM gets you into the game, but having the recommended amount of RAM can deliver a smoother gameplay experience. Meeting that recommendation may require adding more RAM to your laptop or desktop, but a RAM upgrade will also allow your computer to run more programs simultaneously. A solid investment, to be sure.
+
+When adding RAM to your computer, there are two important considerations:
+
+Maximum-supported RAM. Your computer can only recognize so many GB of RAM; this limit is listed on the product’s page in the Dell store and in the manual.
+Compatibility. If your new RAM is not compatible with your computer, you may have trouble using your machine at all. From the Product Support page for your computer, you can click Parts & accessories and select Memory Upgrades to see a list of compatible RAM upgrades.
+For instructions on upgrading your Alienware computer’s RAM, browse to the Installing and Replacing Parts in your Alienware Computer article, select your Alienware model from the list, and then click "Memory."
+
+Resolution
+
+Improve Gaming Performance
+
+Duration: 06:04
+Closed captions: English Only
+
+How To Optimize Systems with Nvidia Cards
+
+Duration: 03:13
+Closed captions: English only

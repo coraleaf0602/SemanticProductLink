@@ -1,0 +1,62 @@
+Troubleshoot and Fix System Performance Issues
+Your Dell computer may experience performance-related issues. Performance issues can be caused due to software updates, corrupt apps or drivers, or a hardware failure. Some symptoms that indicate system performance issues are:
+
+The computer is taking a longer time to boot into the operating system than before.
+Applications are taking a longer time to load or respond.
+The computer responds slowly or stops responding during user activity such as typing or clicking.
+
+Follow these quick steps to improve the performance of your Dell computer
+
+Fix 1: Perform a hard reset
+A hard reset helps drain static electricity that may be causing the power issue. To perform a hard reset, follow these steps.
+
+Turn off the computer.
+Disconnect the power cable (for desktop computers), or disconnect the AC adapter and remove the battery (for Dell laptops with removable battery).
+NOTE: For Dell laptops that have a nonremovable battery, learn How to Reset Real Time Clock (RTC) to Recover Your Dell Laptop. For Dell laptops with removable batteries, see the user guide of your Dell laptop for step-by-step instructions to safely remove the battery.
+NOTE: On select Dell Latitude laptops, learn How to Use Forced ePSA to Recover from a POST or Boot Failure.
+Disconnect all devices such as USB drivers, printers, webcams, media cards (SD/xD), except the keyboard and mouse.
+Press and hold the power button for 15 to 20 seconds to drain the residual power.
+Connect the power cable (for desktop computers) or the AC adapter and battery (for laptops).
+Turn on the computer.
+
+Fix 2: Optimize the computer using SupportAssist
+The SupportAssist application provides a quick and easy way to optimize your computer (including updating outdated drivers) to help resolve system performance issues.
+
+Press and hold the Windows key (Windows Button), and then press the Q key.
+In the search box type SupportAssist.
+Select SupportAssist (App) in the list of results.
+NOTE: If SupportAssist does not show up in the search results, go to the SupportAssist for Home PCs page to download and install SupportAssist.
+Click Start Now to run the tests.
+NOTE: You can touch or click the down arrow and then run the individual test. Dell recommends running a full computer test.
+SupportAssist runs the tests one by one and provides the results and suggested actions.
+
+Fix 3: Inspect and clean the air vents and fans
+If your computer's air vents become clogged with lint and dust, use a can of compressed air to clean them off and restore airflow. Inadequate airflow can cause your computer's processor, memory (RAM), and other internal hardware to overheat and potentially fail. Excessive heat can also significantly decrease performance, as most processors automatically reduce their speed to prevent overheating. If you notice the computer fan running constantly, this might indicate that your computer's air vents are clogged.
+
+Turn off the computer.
+Check the air vents on the computer for dust or debris.
+NOTE: The air vents and fans may be in different locations depending on the computer model. See the user manual of your Dell computer.
+Turn on the computer.
+NOTE: To prevent overheating, keep the computer in an upright position and on a hard or sturdy surface, and provide adequate clearance around the air vents.
+
+Fix 4: Manage thermal performance using Dell Power Manager
+Dell Power Manager allows you to manage your computer’s processor and cooling fan settings so that you can manage performance, computer surface temperature, and fan noise. Each option represents a different balance of these three elements. Choose the configuration that best suits the way that you use your computer.
+
+Check for loose cables in the back of the desktop computer. For laptops, check for loose power cable that is connected to the AC adapter.
+Click the Thermal Management tab in the left pane.
+Select the radio button beside the Thermal Management setting that you want to choose.
+
+Fix 5: Run a hardware diagnostic
+A potential hardware failure with the system memory (RAM) or system board (motherboard) can cause a POST issue. Running a preboot diagnostics helps identify potential hardware issues that may be causing the startup issue.
+
+Turn on your computer.
+At the Dell logo, press the F12 key several times until the One Time Boot Menu appears.
+On the boot menu screen, select the Diagnostics option and press Enter.
+The diagnostic test begins.
+NOTE: The preboot diagnostic interface may vary on your Dell computer, see the user guide of your Dell computer for product-specific information.
+
+NOTE: The mouse is not active during testing.
+
+NOTE: On Dell laptops, user response is required during the LCD test.
+If there are any issues, error codes are displayed. Make a note of the error code, validation code, and service tag, and then look up the error code.
+If you continue to experience performance issues after following the above steps, try these additional steps to troubleshoot system performance issues.

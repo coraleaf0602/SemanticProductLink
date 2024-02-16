@@ -1,0 +1,49 @@
+{
+    "projectFileVersion": "2022-05-01",
+    "stringIndexType": "Utf16CodeUnit",
+    "metadata": {
+        "projectName": "SemanticProductLink",
+        "projectKind": "CustomEntityRecognition",
+        "description": "Training data for SemanticProductLink",
+        "language": "en",
+        "multilingual": false,
+        "storageInputContainerName": "training-data",
+        "settings": {}
+    },
+    "assets": {
+    "projectKind": "CustomEntityRecognition",
+        "entities": [
+            {
+                "category": "Entity1"
+            },
+            {
+                "category": "Entity2"
+            }
+        ],
+        "documents": [
+            {
+                "location": "{DOCUMENT-NAME}",
+                "language": "{LANGUAGE-CODE}",
+                "dataset": "{DATASET}",
+                "entities": [
+                    {
+                        "regionOffset": 0,
+                        "regionLength": 500,
+                        "labels": [
+                            {
+                                "category": "Entity1",
+                                "offset": 25,
+                                "length": 10
+                            },
+                            {
+                                "category": "Entity2",
+                                "offset": 120,
+                                "length": 8
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+}

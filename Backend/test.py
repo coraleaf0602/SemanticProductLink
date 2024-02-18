@@ -38,6 +38,7 @@ def predict():
     if response.status_code == 202:
         return f"<p>Labels imported succesfully</p>"
     else:
+        print(response.status_code)
         return f"<p>Fail</p>"
 
 if __name__ == "__main__":

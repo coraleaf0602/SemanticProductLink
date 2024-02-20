@@ -1,6 +1,7 @@
 from flask import Flask, redirect, url_for, render_template, request, session, jsonify 
 import requests 
 import json 
+import os 
 
 app = Flask(__name__)
 
@@ -15,14 +16,14 @@ api_version = "2022-10-01-preview"
 
 # unique identifier assigned to the text analysis job
 job_id = ""
-    
+
+api_key = os.environ.get("API_KEY")
     
 headers = { 
     # This specifies that the request body is in JSON format
     "Content-Type": "application/json",  
     # Remember to change this to an environment variable saved on Mac 
-    # export API_KEY=value in terminal 
-    "Ocp-Apim-Subscription-Key": ""  
+    "Ocp-Apim-Subscription-Key": f"{api_key}"  
 }
 
 @app.route("/")
@@ -59,14 +60,14 @@ DisplayPort over USB-C - USB-C docking station links all devices to the laptop u
 USB 3.0 - Universal docking stations work with DisplayLink technology that enables docking features over USB. The universal docking solution enables multiple monitors, audio, Ethernet, and other USB devices to be connected to laptops through USB. Works best with USB 3.0 ports on the laptop.
 WiGig (wireless) - WiGig or wireless docking stations work with a laptop that is configured with a WiGig adapter. Only select Dell laptops support WiGig technology."""
     # construct post request 
-    post_url = f"{endpoint}/language/authoring/analyze-text/projects/{project_name}/:import?api-version={api_version}"
-    
+    # post_url = f"{endpoint}/language/authoring/analyze-text/projects/{project_name}/:import?api-version={api_version}"
+    post_url = "https://dellsemanticproductlink.cognitiveservices.azure.com/language/analyze-text/jobs?api-version=2022-10-01-preview"
     # GET request to get the status of your importing your project
-    get_url = f"{endpoint}/language/authoring/analyze-text/projects/{project_name}/import/jobs/{job_id}?api-version={api_version}"
-    
+    get_url = "https://dellsemanticproductlink.cognitiveservices.azure.com/language/analyze-text/jobs?api-version=2022-10-01-preview"
     # Request body 
-    requests_body = "/Users/zhangc/Documents/CS Year 2/Semester 2/CSU22013 Software Engineering Project I /SwEng-Group-14-SemanticProductLink/Training_Data/weijian.json"
-   
+    with open("/Users/zhangc/Documents/CS Year 2/Semester 2/CSU22013 Software Engineering Project I /SwEng-Group-14-SemanticProductLink/Training_Data/weijian.json", "r") as f:
+        requests_body = json.load(f)
+
     # Make POST request to Azure model endpoint 
     
     
@@ -75,17 +76,17 @@ WiGig (wireless) - WiGig or wireless docking stations work with a laptop that is
     # The storageInputContainerName specified doesn't exist.
     # Invalid language code is used, or if the language code type isn't string.
     # multilingual value is a string and not a boolean.
-    if request.method == "POST": 
-        response = requests.post(url=post_url, headers=headers, json=requests_body)
-        if response.status_code == 202:
-            return f"<p>Success</p>"
-        else:
-            print(response.status_code)
-            return f"<p>Fail</p>"
+    # if request.method == "POST": 
+    response = requests.post(url=post_url, headers=headers, json=requests_body)
+    if response.status_code == 202:
+        return f"<p>Success</p>"
+    else:
+        print(response.status_code)
+        return f"<p>Fail</p>"
     
-    else: 
-        response = requests.get(url=get_url, headers=headers)
-        return(response.get_json()) 
+    # else: 
+    #     response = requests.get(url=get_url, headers=headers)
+    # return("get method") 
 
 
 @app.route("/train", methods=["POST", "GET"])

@@ -64,7 +64,7 @@
         <image onmouseover="changeImage(this, 'xps13Top.jpg')" onmouseout="changeImage(this, 'xps13.png')" x="5" y="280" width="135" height="100" href="xps13.png" alt="Normal Image" />
         <image onmouseover="changeImage(this, 'alienwareD.jpg')" onmouseout="changeImage(this, 'alienware.jpg')" x="5" y="405" width="135" height="100" href="alienware.jpg" alt="Normal Image" />
         <image onmouseover="changeImage(this, 'alienware.jpg')" onmouseout="changeImage(this, 'alienwareD.jpg')" x="5" y="530" width="135" height="100" href="alienwareD.jpg" alt="Normal Image" />
-        <label onmouseover="textPop" x ="5" y ="90" width="135" height="40"/> 
+      //  <label onmouseover="textPop" x ="5" y ="90" width="135" height="40"/> 
       </svg>
 
     <script>
@@ -75,10 +75,10 @@
         function changeImage(element, newSrc) {
             element.setAttribute('href', newSrc);
         }
-        function textPop(){
-            var inputText = "Price:    ";
-            document.getElementById("output").innerText = inputText;
-        }
+    //    function textPop(){
+    //      var inputText = "Price:    ";
+    //        document.getElementById("output").innerText = inputText;
+    //    }
     </script>
     
 </body>

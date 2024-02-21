@@ -1,0 +1,41 @@
+A docking station or port replicator provides a way to connect your laptop to several devices like mouse, keyboard, speakers, monitor, Ethernet. Using a docking station that is connected to several devices helps gain the benefits of a desktop computer without sacrificing the portability of a laptop.
+
+Dell Universal or USB-C docks such as D6000S, WD19, UD22, and others use DisplayLink technology. These docking stations work over a USB-A or USB-C (USB 3.0 and above) port. 
+
+Before you dock for the first time
+
+Before you initially connect your laptop to the docking station, the operating system must complete its setup process.
+
+    Ensure that the laptop is not connected to the docking station (docked).
+    Turn on the laptop.
+
+    Press the power button to turn on the laptop
+    Verify that the operating system has completed the setup process.
+    Verify that the battery is installed before docking your laptop.
+
+Docking your laptop
+CAUTION: Always use the Dell AC adapter that came with the docking station. If you use any other commercially available AC adapter, you may damage the docking station or the laptop.
+
+    Go to Dell.com/support/drivers and identify the Dell laptop using the Service Tag.
+    Update your laptop's BIOS, graphics, and network drivers.
+    Update the DisplayLink driver.
+    NOTE: Go to Dell.com/support/drivers and identify the Dell docking station using the Service Tag or model number. Alternatively, download the DisplayLink driver from the DisplayLink website.
+    Connect the AC adapter to a power outlet. Then, connect the AC adapter to the docking station.
+
+    Connect the USB or USB-C cable to the laptop.
+    Connecting the Dell docking station to a laptop
+    Connect the keyboard, mouse, monitors, and other devices to the docking station, as needed. To learn how many monitors are supported, see the user manual of the docking station.
+    Connect the monitor to the Dell docking station
+
+Update firmware of the docking station
+NOTE: Information that is provided is for Windows users running the executable tool. For other operating systems or further detailed instructions, see the docking station admin guide available on Dell.com/support/manuals.
+
+NOTE: Firmware updates may not be available for all Dell docking stations. If a firmware update is available, follow the steps that are mentioned below to download and update the firmware of the dock.
+
+    Go to Dell.com/support/drivers and identify the docking station using the Service Tag or the model number.
+    Download the stand-alone dock firmware update utility.
+    Connect the docking station to the laptop.
+    Open the downloaded dock firmware update utility in administrative mode (run as administrator).
+    Wait for all the information to be entered in the various Graphical User Interface (UI) panes.Example of WD19S Dell dock firmware update utility home screen
+    Click Update.
+    Wait for all the component firmware update to complete. A progress bar is displayed in the bottom.

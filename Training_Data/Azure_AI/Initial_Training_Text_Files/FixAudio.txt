@@ -1,0 +1,61 @@
+Fix Audio or Sound Playback Issues with Speakers or Headphones
+Whether it is virtual meetings, learning from home, or gaming, proper audio playback is important. Sound playback issues can occur whether you are using the integrated laptop speakers, external speakers, headphones, or headsets. If you notice any of the following symptoms, the steps below will help you test the speakers, headphones, or headsets.
+
+Cannot hear any sound from the speakers.
+There is no sound while watching videos or a movie.
+Cannot hear any sound during a video call or the volume is too low.
+The sound is muffled, intermittent, crackling/popping, or distorted.
+There is a hissing or white noise from the speakers or headphones.
+
+Follow these quick steps to fix audio or sound playback issues
+
+Fix 1: Perform a hard reset
+A hard reset helps drain static electricity that may be causing the audio or sound issue. To perform a hard reset, follow these steps.
+
+Turn off the computer.
+Disconnect the power cable (for desktop computers), or disconnect the AC adapter and remove the battery (for Dell laptops with removable battery).
+
+NOTE: For Dell laptops that have a nonremovable battery, learn how to reset real time clock (RTC) to recover your Dell laptop. For Dell laptops with removable batteries, see the user guide of your Dell laptop for step-by-step instructions to safely remove the battery.
+
+Disconnect all devices such as USB drivers, printers, webcams, media cards (SD/xD), except the keyboard and mouse.
+Press and hold the power button for 15 to 20 seconds to drain the residual power
+Connect the power cable (for desktop computers) or the AC adapter and battery (for laptops).
+Turn on the computer and reconnect the devices.
+Fix 2: Test the speaker, headphone, or headset
+A faulty device can cause audio or sound playback issues. Check if the audio device such as speaker, headphone, or headset is working by following these steps. To test the internal speakers of your Dell laptop, run the SupportAssist audio or sound test.
+
+Disconnect the speaker or headphone from your computer.
+Verify that the speaker or headphone is turned on.
+a. If the speaker or headphone requires a power source such as ac adapter or USB power, make sure that it’s turned on.
+b. If it uses batteries, ensure that the battery is fully charged or replace the battery.
+Connect or pair the speaker or headphone with another computer or phone to test it.
+
+NOTE: The steps to pair your Bluetooth-enabled device may differ, for additional details, refer to the product documentation.
+If the speaker or headphone is working on another computer or phone, reconnect or pair it with your computer and try again. However, if it does not work when connected to another computer or phone, the device may be faulty. Contact the device manufacturer for repair options.
+Fix 3: Check the default audio playback device and volume settings
+The default audio playback device is the device that Windows uses to output (play) sound. When you connect speakers, USB or Bluetooth headphones, USB or Bluetooth headset, or other audio devices to your computer, you can select which device you want to use by default. Ensure that the correct device is selected and check the volume settings.
+Click Start and open the Settings app in Windows.
+In the Settings app, click Sound on the left panel.
+Under the Output > Choose where to play sound (in Windows 11) or Choose your output device (in Windows 10), select the device where you want the sound to play. If you do not have multiple audio playback devices, the default output device is set automatically.
+
+Sound settings app showing the different audio output devices in Windows 11.
+
+Make sure that the audio device is not muted and is not disabled. To unmute or enable, click the unmute speaker iconUnmute speaker icon
+a. If your keyboard has volume buttons, press the mute button to unmute the speaker or press the volume up button several times until the volume increases.
+b. If your speaker, headphone, or headset has its own volume control, make sure the volume is turned up on the device.
+
+Unmute the audio output device in Windows 11 using the Settings app.
+Fix 4: Optimize the computer using SupportAssist
+The SupportAssist application provides a quick and easy way to optimize your computer (including installing the latest Dell drivers and running a hardware test). Installing the latest audio driver helps resolve audio-related issues. SupportAssist also runs a hardware test and provides the results and suggested actions.
+
+Press and hold the Windows key (Windows Button), and then press the Q key.
+In the search box type SupportAssist.
+Select SupportAssist (App) in the list of results.
+
+NOTE: If SupportAssist does not show up in the search results, go to the SupportAssist for Home PCs page to download and install SupportAssist.
+
+Click Start Now to allow SupportAssist to scan and optimize your Dell computer.
+
+Optimize the computer using SupportAssist app video.
+
+Watch this video to learn how to optimize your Dell computer using SupportAssist

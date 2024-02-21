@@ -1,0 +1,68 @@
+Fix Audio or Sound Recording Issues with Headsets or Microphones
+
+Whether it is virtual meetings, learning from home, or talking to your teammates while gaming, clear audio from the microphone is important. Sound recording issues can occur whether you are using the integrated microphone on laptops, external, USB, or Bluetooth microphones or headsets. If you notice any of the following symptoms, the steps below will help you test the microphone.
+
+Other users cannot hear your voice on Microsoft Teams, Skype, Zoom, or other communication apps.
+Your voice sounds muffled, intermittent, crackling, popping, or distorted to other users.
+The microphone volume is too low, or the microphone does not appear to be working at all.
+
+Follow these quick steps to fix audio input or sound recording issues
+
+Fix 1: Perform a hard reset
+A hard reset helps drain static electricity that may be causing the microphone issue. To perform a hard reset, follow these steps.
+
+Turn off the computer.
+Disconnect the power cable (for desktop computers), or disconnect the AC adapter and remove the battery (for Dell laptops with removable battery).
+NOTE: For Dell laptops that have a nonremovable battery, learn how to reset real time clock (RTC) to recover your Dell laptop. For Dell laptops with removable batteries, see the user guide of your Dell laptop for step-by-step instructions to safely remove the battery.
+Disconnect all devices such as USB drivers, printers, webcams, media cards (SD/xD), except the keyboard and mouse.
+Press and hold the power button for 15 to 20 seconds to drain the residual power.
+Perform a hard reset
+Connect the power cable (for desktop computers) or the AC adapter and battery (for laptops).
+Turn on the computer and reconnect the devices.
+Fix 2: Test the microphone or headset
+A faulty device can cause audio or sound recording issues. Check if the microphone or headset with a built-in mic is working by following these steps. To test the internal microphone of your Dell laptop, run the SupportAssist microphone test.
+
+NOTE: Certain headsets do not have a built-in microphone. Check the product documentation to verify if your headset has a built-in microphone.
+Disconnect the microphone or headset from your computer.
+Verify that the microphone or headset is turned on.
+If the headset or microphone requires a power source such as an ac adapter or USB power, make sure that it’s turned on.
+If it uses batteries, ensure that the battery is fully charged or replace the battery.
+Connect or pair the headset or microphone with another computer or phone to test it.
+NOTE: The steps to pair your Bluetooth-enabled device may differ, for additional details, refer to the product documentation.
+Fix 2: Test the microphone or headset
+
+Fix 2: Test the microphone or headset
+If the headset or microphone is working on another computer or phone, reconnect or pair it with your computer and try again. However, if it does not work when connected to another computer or phone, the device may be faulty. Contact the device manufacturer for repair options.
+Fix 3: Make sure apps have access to microphone
+In Windows 11 and Windows 10, privacy settings may prevent apps from using the microphone. Make sure to give your apps permission to use the microphone.
+
+Click Start and open the Settings app in Windows.
+In the Settings app, click Privacy & Security (in Windows 11) or Privacy (in Windows 10).
+Under App Permissions, click Microphone, and make sure Microphone access is turned on. In Windows 10, select Change, and then turn on Allow apps to access your microphone.
+Fix 3: Make sure apps have access to microphone
+Choose which apps have access to the microphone. Desktop apps do not appear in this list.
+In Windows 10, turn on the Allow desktop apps to access your microphone. You can also choose which apps have access to the microphone.
+Fix 4: Check the default audio output device and volume settings
+The default audio output device is the device that Windows uses for recording sound. When you connect a microphone, USB headset, or Bluetooth headset with a built-in mic to your computer, you can select which device you want to use by default. Ensure that the correct device is selected and check the volume settings.
+
+Click Start and open the Settings app in Windows.
+In the Settings app, click Sound on the left panel.
+Fix 4: Check the default audio output device and volume settings
+Under the Input > Choose a device for speaking or recording (in Windows 11) or Choose your input device (in Windows 10), select the device from where you want the sound to record. If you do not have multiple audio recording devices, the default input device is set automatically.
+Fix 4: Check the default audio output device and volume settings
+Make sure that the microphone or headset is not muted and is not disabled. To unmute or enable, click the unmute microphone icon
+If your microphone or headset has its own volume control, make sure that the volume is turned up on the device.
+Fix 4: Check the default audio output device and volume settings
+Fix 5: Optimize the computer using SupportAssist
+The SupportAssist application provides a quick and easy way to optimize your computer (including installing the latest Dell drivers and running a hardware test). Installing the latest audio driver helps resolve audio-related issues. SupportAssist also runs a hardware test and provides the results and suggested actions.
+
+Press and hold the Windows key (Windows Button), and then press the Q key.
+In the search box type SupportAssist.
+Select SupportAssist (App) in the list of results.
+NOTE: If SupportAssist does not show up in the search results, go to the SupportAssist for Home PCs page to download and install SupportAssist.
+Click Start Now to allow SupportAssist to scan and optimize your Dell computer.
+Fix 5: Optimize the computer using SupportAssist
+Watch this video to learn how to optimize your Dell computer using SupportAssist.
+
+What if the microphone still does not work?
+The troubleshooting steps above covers most common issues associated with audio or sound recording. If the issue persists, try these additional troubleshooting steps to fix audio or sound recording issues.

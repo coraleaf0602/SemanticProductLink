@@ -1,0 +1,73 @@
+Keyboard
+
+Troubleshoot USB, Bluetooth, or wireless keyboard issues on a Dell computer
+
+Whether you are typing a word document, working on an excel spreadsheet, or gaming, a keyboard is an essential input device. Keyboards can be connected to a computer using USB, Bluetooth, a dedicated wireless USB dongle, or integrated into the laptop. If you are experiencing any of the following symptoms, the suggested quick steps might help.
+​
+
+    Key presses are responding slowly.
+    Key presses are typing characters intermittently or typing incorrect characters.
+    Keys on the keyboard do not respond.
+
+Follow these quick steps to help you to resolve your keyboard issue
+
+Try each step and check if your keyboard issue is resolved. If the issue is not resolved, proceed to the next step.
+Fix 1: Reseat the keyboard connectors to the computer
+
+Your USB cable Figure 1 or USB wireless receiver Figure 2 may have come loose. Reseating the connector will ensure good data transfer.
+
+USB
+
+Figure 1: USB Cable Connection
+
+USB
+
+Figure 2: USB Wireless Receiver
+Fix 2: Install new batteries when using a Wireless or Bluetooth keyboard
+
+During normal use of the keyboard, the batteries discharge. This may cause the computer and keyboard to lose connection. Replacing the batteries with new ones will reestablish a strong connection.
+
+See Dell Knowledge Base Article Manuals and Documentation for your Dell Product for details on how to replace the batteries in your Wireless or Bluetooth keyboard.
+Fix 3: Save any data, close any open programs, and restart the computer
+
+Restarting the computer clears out the computer memory and resets the connection between the computer and the keyboard.
+
+    Save updates to any open documents.
+    Close any open programs or applications.
+    Select the Start icon.
+    Select the Power icon.
+    Select Restart.
+
+Check to ensure the keyboard is working correctly after the computer completely finishes booting.
+Fix 4: Optimize your Dell computer using the SupportAssist application
+
+This application ensures your computer has the latest Dell driver updates and checks settings to keep your computer efficient and reliable.
+
+    Press and hold the Windows key (Windows Button), and then press the Q key.
+    Type SupportAssist in the search box.
+    Select SupportAssist (App) in the list of results in Figure 3.
+    NOTE: If SupportAssist does not show up in the search results, go to the SupportAssist for Home PCs page to download and install SupportAssist.
+    SupportAssist
+    Figure 3: SupportAssist Search Results
+
+    Click Start Now to run the tests, Figure 4.
+    NOTE: You can touch or click the down arrow and then run the individual test. Dell recommends running a full computer test.
+    SupportAssist
+    Figure 4: SupportAssist Main Screen
+
+    SupportAssist runs the tests one by one and provides the results and suggested actions.
+
+Fix 5: Download and install the latest Windows Operating System updates
+
+Having the latest Operating System updates installed on your Windows computer keeps it efficient and reliable.
+
+See Microsoft Knowledge Base Article Get the latest Windows update for information on how to get the latest Windows updates on your computer.
+Fix 6: Run the keyboard diagnostics
+
+Running the keyboard diagnostics ensures that your keyboard and the hardware that supports it is working correctly.
+
+To run the diagnostics, browse to the SupportAssist keyboard hardware test page (the test starts automatically).
+
+If the test fails, contact Dell Technical Support.
+
+If these quick steps did not resolve your issue, we have more detailed information in the Other Resources section. You can also search for content related to the issue using the search bar at the top of this page.

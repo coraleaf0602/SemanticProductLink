@@ -1,0 +1,136 @@
+Apps For Your Dell
+
+Let us introduce you to some applications that might be pre-installed on your Dell computer. Common pre-installed applications on Dell computers include SupportAssist, MyDell, Dell Digital Delivery, and Dell Optimizer. These applications are designed to help you optimize your computer's performance, keep your system up to date with the latest software and driver updates, and provide troubleshooting assistance when needed.
+
+NOTE: Preinstalled applications can vary depending on the specific model and configuration of your Dell computer.
+
+SupportAssist
+SupportAssist automates support from Dell by proactively and predictively identifying hardware and software issues on your PC. SupportAssist addresses system performance and stabilization issues, prevents security threats, monitors and detects hardware failures.
+
+Download SupportAssist for Home PCs and sign in with your Dell account.
+
+Start now button on the SupportAssist app for Windows
+
+MyDell
+The all-new MyDell is an AI-based optimization software that delivers intelligent features to automatically fine-tune your computer for the best audio, video, battery, and performance. Each MyDell experience is different for every user as it learns and responds to the behavior of how the computer is used.
+
+MyDell version 3.1.1 supports Windows 10 21H2 (64-bit) or later, and Windows 11 21H2 (64-bit) or later operating systems.
+
+The latest version of MyDell is available for Inspiron, Vostro, and XPS desktops and laptops.
+
+Download MyDell 3.1.1
+
+MyDell app showing the control center buttons for applications, audio, mouse & keyboard, network, power, presence detection, video, and webcam
+
+Dell Digital Delivery
+Dell Digital Delivery or Alienware Digital Delivery is an easy way to buy software from Dell. You can automatically download and install software titles on select systems. Dell Digital Delivery is preinstalled on most Dell PCs.
+
+Need help with reinstalling Dell Digital Delivery or Alienware Digital Delivery? Download the app from Dell.com/support/drivers.
+
+Purchased softwares showing in the Dell Digital Delivery app
+
+Dell Digital Locker
+Dell Digital Locker is a secure web portal that allows you to view, activate, and manage software, subscriptions, and licensing information. You can:
+
+Download purchased software
+Access product license keys
+Redeem Registration Codes to access software purchased through a Dell partner
+Download related updates and patches
+View other types of digital assets and certificates
+Manage subscriptions for warranties, software, and other services with recurring bills.
+Sign in to Dell Digital Locker using the email address used at the time of purchase.
+
+Software and licenses showing in the Dell Digital Locker website
+
+Dell Optimizer
+Dell Optimizer intelligently optimizes the performance of your device using artificial intelligence and machine learning. Dell Optimizer dynamically configures system settings to optimize the performance of your applications. It improves productivity, performance, and user experience through system usage analysis and learning.
+
+Dell Optimizer is only supported on Latitude, Dell Precision Workstations, and OptiPlex systems launched after March 2020. Download the Dell Optimizer from Dell.com/support/drivers.
+
+Want to learn more? See the documentation for Dell Optimizer.
+
+Analytics, applications, audio, network, and power button showing on the Dell Optimizer app
+
+Microsoft apps
+Office
+Install Office
+To install Office, follow these steps.
+
+Office is preinstalled on select Dell PCs. Go to Start > All apps > Office. If Office is not preinstalled, go to Office.com and sign in using the Microsoft Account associated with your Office purchase.
+After signing in from the Office home page, select Install (or depending on your version, Install apps).
+Depending on your browser, select Run (in Microsoft Edge or Internet Explorer), Setup (in Chrome), or Save File (in Firefox).
+If you see the User Account Control prompt that says, Do you want to allow this app to make changes to your device? Select Yes.
+Your install is finished when you see the phrase, "You're all set! Office is installed now", and an animation plays to show you where to find Office applications on your computer. Select Close.
+Office activation
+To activate Office, follow these steps.
+
+Open an Office app such as Word or Excel. For example, to open Word, go to Start > All apps > Word.
+When the app opens, read and accept the license agreement. Office is activated and ready to use.
+NOTE: The Activation Wizard appears if Office has trouble activating. Complete the steps in the wizard to finish activation.
+Help configuring Office apps such as Word, Excel, Outlook
+Whether you are using Microsoft 365 or Office 2021, 2019, or previous versions, get helpful resources at Microsoft help and learning.
+
+Microsoft Teams
+Microsoft Teams helps you meet and chat with others, share files online, and collaborate with other users, all in one app.
+
+Microsoft Teams is available for Windows, Mac, the web, and for Android or iOS mobile devices.
+
+Learn more about Microsoft Teams at https://www.microsoft.com/microsoft-teams.
+
+Sign in button on the Microsoft Teams app
+
+Microsoft Photos
+Microsoft Photos, or Photos app helps you view and organize all your photos and videos. With the Photos app, back up your photos to OneDrive to keep them protected and accessible across all your devices. You can manage your storage directly from the Photos app. Microsoft Photos is a free program available for devices running Windows 10 and newer versions.
+
+To open the Photos app, go to Start > Photos.
+
+When you double-click an image file, it opens in the Photos app by default. If another program is set as your default image viewer, right-click the image and select Open with > Photos.
+
+After the image opens in the app, use the tools at the top of the window to edit, rotate, crop, or zoom in on your photo.
+
+Microsoft photos app for Windows
+
+Mail and Calendar
+The Mail and Calendar apps help you stay up to date on your email, manage your schedule, and stay in touch with your friends or family.
+
+The Mail and Calendar app supports Office 365, Exchange, Outlook.com, Gmail, Yahoo!, and other popular accounts. Select Add account to get started.
+
+Do you need help with the Mail and Calendar apps? Select the Settings icon on the lower left corner of the app, and then select Help > Open Help.
+
+Add account button on the mail app in Windows
+
+Communication or video conferencing apps
+Whether it's catching up with family, discussing important projects with colleagues, or expanding your knowledge through virtual learning, video conferencing apps have become an essential tool in today's interconnected world. These apps offer various features such as screen sharing, chat functions, and the ability to record meetings for future reference. Here is a list of some video conferencing apps that are popular and widely used.
+
+Microsoft Teams
+To download Microsoft Teams, go to https://www.microsoft.com/microsoft-teams/download-app.
+
+Get help at Microsoft Teams help and learning to set up, configure, and troubleshoot issues with Microsoft Teams.
+
+Zoom
+To download Zoom, go to https://zoom.us/download.
+
+Get support for Zoom to set up, configure, and troubleshoot issues with Zoom.
+
+Discord
+To download Discord, go to https://discord.com/download.
+
+Get support at Discord Help Center to set up, configure, and troubleshoot issues with Discord.
+
+Webex
+To download Webex, go to https://www.webex.com/downloads.html.
+
+Get help at Webex Support to set up, configure, and troubleshoot issues with Webex.
+
+Google Meet
+To download Google Meet, go to https://meet.google.com/.
+
+Get support at Google Meet Help Center to set up, configure, and troubleshoot issues with Google Meet.
+
+Slack
+To download Slack, go to https://slack.com/download.
+
+Get support at Slack Help Center to set up, configure, and troubleshoot issues with Slack.
+
+Next, let us learn about different options to back up your personal data or recover your computer.
+

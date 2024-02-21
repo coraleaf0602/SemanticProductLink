@@ -16,14 +16,13 @@ api_version = "2022-10-01-preview"
 
 # unique identifier assigned to the text analysis job
 job_id = ""
-
 api_key = os.environ.get("API_KEY")
     
 headers = { 
     # This specifies that the request body is in JSON format
     "Content-Type": "application/json",  
     # Remember to change this to an environment variable saved on Mac 
-    "Ocp-Apim-Subscription-Key": f"{api_key}"  
+    "Ocp-Apim-Subscription-Key": api_key  
 }
 
 @app.route("/")
@@ -36,8 +35,10 @@ def dell():
     return render_template("dellRandomPage.html")
 
 # Method to call the Azure model 
-@app.route("/predict", methods=["POST", "GET"])
-def predict():
+# Scrapping this cuz I realised I was completely misinterpreting what we're doing 
+# https://learn.microsoft.com/en-us/azure/ai-services/language-service/custom-named-entity-recognition/quickstart?pivots=rest-api
+@app.route("/import", methods=["POST", "GET"])
+def importAI():
     
     # This data is not the same as the JSON file used to train the model, 
     # as it does not contain labeled annotations but rather the input text 
@@ -78,6 +79,14 @@ WiGig (wireless) - WiGig or wireless docking stations work with a laptop that is
     # multilingual value is a string and not a boolean.
     # if request.method == "POST": 
     response = requests.post(url=post_url, headers=headers, json=requests_body)
+    # Check response status code
+    print("Response Status Code:", response.status_code)
+
+    # Check response content
+    print("Response Content:", response.text)
+
+    # Check response headers
+    print("Response Headers:", response.headers)
     if response.status_code == 202:
         return f"<p>Success</p>"
     else:
@@ -88,7 +97,13 @@ WiGig (wireless) - WiGig or wireless docking stations work with a laptop that is
     #     response = requests.get(url=get_url, headers=headers)
     # return("get method") 
 
-
+# Querying our model 
+# Reference link: https://learn.microsoft.com/en-gb/azure/ai-services/language-service/custom-named-entity-recognition/how-to/call-api?tabs=rest-api#send-an-entity-recognition-request-to-your-model
+@app.route("/query", methods=["POST", "GET"])
+def query(): 
+    
+    
+    
 @app.route("/train", methods=["POST", "GET"])
 def train(): 
     # After your project has been imported, you can start training your model.
@@ -99,15 +114,16 @@ def train():
         "trainingConfigVersion": "{CONFIG-VERSION}",
         "evaluationOptions": {
             "kind": "percentage",
-            "trainingSplitPercentage": 80,
-            "testingSplitPercentage": 20
+            "trainingSplitPercentage": 90,
+            "testingSplitPercentage": 10
         }
     }   
     body_json = json.dumps(request_body, indent=4)
 
-    if request.method == "POST": 
-        response = requests.post(url=post_url, headers=headers, json=body_json)
-        return (response.status_code)
+    # if request.method == "POST": 
+    response = requests.post(url=post_url, headers=headers, json=body_json)
+    return (response.status_code)
+    # Returns error response 304 
     
 
 if __name__ == "__main__":

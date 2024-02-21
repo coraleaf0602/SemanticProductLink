@@ -68,6 +68,28 @@ WiGig (wireless) - WiGig or wireless docking stations work with a laptop that is
     # Request body 
     with open("/Users/zhangc/Documents/CS Year 2/Semester 2/CSU22013 Software Engineering Project I /SwEng-Group-14-SemanticProductLink/Training_Data/weijian.json", "r") as f:
         requests_body = json.load(f)
+    requests_body = {
+        "displayName":"Extracting entities",
+        "analysisInput":{
+            "documents":[
+                {
+                    "id": "1",
+                    "language":"en",
+                    "text": "Having trouble with your computer? Use the monitor to connect a battery and check your USB cable!"
+                }
+            ]
+        }, 
+            "tasks": [
+            {
+                "kind":"CustomEntityRecognition", 
+                "taskName": "Entity Recognition", 
+                "parameters":{
+                    "projectName":"SemanticProductLink", 
+                    "deploymentName": "Test-Deployment"
+                }
+            }
+        ]
+    }
 
     # Make POST request to Azure model endpoint 
     
@@ -99,8 +121,8 @@ WiGig (wireless) - WiGig or wireless docking stations work with a laptop that is
 
 # Querying our model 
 # Reference link: https://learn.microsoft.com/en-gb/azure/ai-services/language-service/custom-named-entity-recognition/how-to/call-api?tabs=rest-api#send-an-entity-recognition-request-to-your-model
-@app.route("/query", methods=["POST", "GET"])
-def query(): 
+# @app.route("/query", methods=["POST", "GET"])
+# def query(): 
     
     
     

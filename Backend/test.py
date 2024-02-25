@@ -21,7 +21,10 @@ headers = {
     # Remember to change this to an environment variable saved on Mac 
     "Ocp-Apim-Subscription-Key": api_key  
 }
-
+# Define the dictionary with categories as keys and lists of links as values
+database = {
+    # Add more categories and links as needed
+}
 @app.route("/")
 def home(): 
     return render_template("basicWebsite.html")

@@ -30,10 +30,6 @@ headers = {
 def home(): 
     return render_template("basicWebsite.html")
 
-# Random page on dell to display and integrate - buggy 
-@app.route("/dell")
-def dell(): 
-    return render_template("index.html")
 
 # Method to call the Azure model 
 # https://learn.microsoft.com/en-us/azure/ai-services/language-service/custom-named-entity-recognition/quickstart?pivots=rest-api

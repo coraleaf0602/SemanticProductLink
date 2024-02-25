@@ -48,20 +48,21 @@ def importAI():
     # construct post request 
     # post_url = f"{endpoint}/language/authoring/analyze-text/projects/{project_name}/:import?api-version={api_version}"
     post_url = "https://dellsemanticproductlink.cognitiveservices.azure.com/language/analyze-text/jobs?api-version=2022-10-01-preview"
-    # GET request to get the status of your importing your project
    
+    # Importing the request.json file. The 'text' label hereis not the same 
+    # as the JSON file used to train the model,  as it does not contain labeled
+    # annotations but rather the input text that the model will process.
+    # For example, text data from the knowledge base articles that we're using 
     with open("request.json", "r") as f:
         requests_body = json.load(f)
-    # Make POST request to Azure model endpoint 
-    
-    
+        
     # Possible error scenarios for this request:
-    # The selected resource doesn't have proper permissions for the storage account.
-    # The storageInputContainerName specified doesn't exist.
-    # Invalid language code is used, or if the language code type isn't string.
-    # multilingual value is a string and not a boolean.
-    # if request.method == "POST": 
-    print(headers.values())
+    # 1. The selected resource doesn't have proper permissions for the storage account.
+    # 2. The storageInputContainerName specified doesn't exist.
+    # 3. Invalid language code is used, or if the language code type isn't string.
+    # 4. multilingual value is a string and not a boolean.
+    
+    # Make POST request to Azure model endpoint 
     response = requests.post(url=post_url, headers=headers, json=requests_body)
     # Check response status code
     print("Response Status Code:", response.status_code)
@@ -79,26 +80,16 @@ def importAI():
 
     # You will receive a 202 response indicating that your task has been submitted successfully.
     if response.status_code == 202:
-        # duration = 10 # Set the amount of time we want to continously run the get requests for 
-        # start_time = time.time() # Get the start time
         task_running = True
-        # Run the while loop until the specified duration is reached
         while task_running:
             response = requests.get(url=get_url, headers=headers)
-            # Check response status code
-            # print("Response Status Code:", response.status_code)
-
-            # # Check response content
-            # print("Response Content:", response.text)
             response_body = response.json()
             
             response_status = response_body.get('status')
             print(response_status)
-            # # Check response headers
-            # print("Response Headers:", response.headers)
-
-            # # Add a small delay to avoid consuming too much CPU
-            # time.sleep(1)  # Sleep for 1 second
+            
+            # Add a small delay to avoid consuming too much CPU
+            time.sleep(1)  # Sleep for 1 second
             if response_status == "succeeded":
                 task_running = False
                 print(response.text)
@@ -107,6 +98,7 @@ def importAI():
                 categories = []
                 for entity in response_body['tasks']['items'][0]['results']['documents'][0]['entities']:
                     categories.append(entity['category'])  
+                # Removes duplicates in the list 
                 categories = list(set(categories))
                 print(categories) 
         return render_template("success.html")
@@ -126,16 +118,6 @@ def train():
         "evaluationOptions": {
             "kind": "percentage",
             "trainingSplitPercentage": 90,
-            "testingSplitPercentage": 10
-        }
-    }   
-    body_json = json.dumps(request_body, indent=4)
-
-    # if request.method == "POST": 
-    response = requests.post(url=post_url, headers=headers, json=body_json)
-    return (response.status_code)
-    # Returns error response 304 
-    
-
+      
 if __name__ == "__main__":
     app.run(debug=True)

@@ -105,19 +105,6 @@ def importAI():
     else:
         return render_template("fail.html")
     
-    
-# We don't need this - training the AI 
-@app.route("/train", methods=["POST", "GET"])
-def train(): 
-    # After your project has been imported, you can start training your model.
-    # Submit a POST request using the following URL, headers, and JSON body to submit a training job.
-    post_url = f"{endpoint}/language/authoring/analyze-text/projects/{project_name}/:train?api-version={api_version}"
-    request_body = {
-        "modelLabel": "{MODEL-NAME}",
-        "trainingConfigVersion": "{CONFIG-VERSION}",
-        "evaluationOptions": {
-            "kind": "percentage",
-            "trainingSplitPercentage": 90,
       
 if __name__ == "__main__":
     app.run(debug=True)

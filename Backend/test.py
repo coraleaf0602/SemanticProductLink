@@ -1,27 +1,105 @@
-from flask import Flask
+from flask import Flask, redirect, url_for, render_template, request, session, jsonify 
+import requests 
+import json 
+import os 
+import time 
 
 app = Flask(__name__)
 
-test_data = """Instructions
-Need help with setting up a Dell docking station with a laptop? This article provides information about how to connect and set up a Dell docking station with a laptop. You can also find common troubleshooting steps and answers to some frequently asked questions.
+# The endpoint for authenticating your API request.
+endpoint = "https://dellsemanticproductlink.cognitiveservices.azure.com/"
+project_name = "SemanticProductLink" 
+api_version = "2022-10-01-preview"
 
-Docking stations help provide the modern worker with the best of both worlds, the benefits of a desktop computer without sacrificing the portability of a laptop. You may connect external monitors, Ethernet for reliable connection, USB ports for connecting devices, and a full-sized keyboard and mouse, among other things.
-
-The interface to connect a Dell docking station to a laptop may vary. To learn more about different types of Dell docking stations, see our Guide to Dell Docking Stations.
-
-Expand all | Collapse all
-Verify that you are using a compatible docking station with the laptop
-Docking stations come with different types of docking interfaces. For example, Dell E-port or D-port, Thunderbolt 3, USB-C, USB 3.0, or WiGig (wireless). It is important to identify if the type of docking interface or port that is available on the computer is compatible with the docking station.
-
-Dell E-port or D-port - Proprietary docking solution for Dell Latitude and Dell Precision E-series. Dell docking stations provide efficient connectivity to all desktop devices and devices with a simple click into the docking station. Available mostly on Dell Latitude laptops and certain Precision mobile workstations.
-Thunderbolt 3 - Thunderbolt 3 docking stations link all devices to the laptop using a single USB-C Thunderbolt cable. Extend the traditional USB capabilities with native multi-display video, audio, data, and power delivery (on select Dell laptops) to charge the laptop with a single USB-C cable. The reversible connector is convenient to use USB-C, with no wrong orientation.
-DisplayPort over USB-C - USB-C docking station links all devices to the laptop using a single USB-C cable. Extend the traditional USB capabilities with native multi-display video, audio, data, and power delivery (on select Dell laptops) to charge the laptop with a single USB-C cable. The reversible connector is convenient to use USB-C, with no wrong orientation.
-USB 3.0 - Universal docking stations work with DisplayLink technology that enables docking features over USB. The universal docking solution enables multiple monitors, audio, Ethernet, and other USB devices to be connected to laptops through USB. Works best with USB 3.0 ports on the laptop.
-WiGig (wireless) - WiGig or wireless docking stations work with a laptop that is configured with a WiGig adapter. Only select Dell laptops support WiGig technology."""
-
+# unique identifier assigned to the text analysis job
+job_id = ""
+api_key = os.environ.get("API_KEY")
+    
+headers = { 
+    # This specifies that the request body is in JSON format
+    "Content-Type": "application/json",  
+    # Remember to change this to an environment variable saved on Mac 
+    "Ocp-Apim-Subscription-Key": api_key  
+}
+# Define the dictionary with categories as keys and lists of links as values
+database = {
+    # Add more categories and links as needed
+}
 @app.route("/")
-def hello_world():
-    return f"<p>{test_data}</p>"
+def home(): 
+    return render_template("basicWebsite.html")
 
+
+# Method to call the Azure model 
+# https://learn.microsoft.com/en-us/azure/ai-services/language-service/custom-named-entity-recognition/quickstart?pivots=rest-api
+@app.route("/import", methods=["POST", "GET"])
+def importAI():
+    
+    # This data is not the same as the JSON file used to train the model, 
+    # as it does not contain labeled annotations but rather the input text 
+    # that the model will process.
+    # For example, text data from the knowledge base articles that we're using 
+    
+    # construct post request 
+    # post_url = f"{endpoint}/language/authoring/analyze-text/projects/{project_name}/:import?api-version={api_version}"
+    post_url = "https://dellsemanticproductlink.cognitiveservices.azure.com/language/analyze-text/jobs?api-version=2022-10-01-preview"
+   
+    # Importing the request.json file. The 'text' label hereis not the same 
+    # as the JSON file used to train the model,  as it does not contain labeled
+    # annotations but rather the input text that the model will process.
+    # For example, text data from the knowledge base articles that we're using 
+    with open("request.json", "r") as f:
+        requests_body = json.load(f)
+        
+    # Possible error scenarios for this request:
+    # 1. The selected resource doesn't have proper permissions for the storage account.
+    # 2. The storageInputContainerName specified doesn't exist.
+    # 3. Invalid language code is used, or if the language code type isn't string.
+    # 4. multilingual value is a string and not a boolean.
+    
+    # Make POST request to Azure model endpoint 
+    response = requests.post(url=post_url, headers=headers, json=requests_body)
+    # Check response status code
+    print("Response Status Code:", response.status_code)
+
+    # Check response content
+    print("Response Content:", response.text)
+
+    # Check response headers
+    print("Response Headers:", response.headers)
+    
+    # In the response headers, extract operation-location. 
+    # You can use this URL to query the task completion status and get the results when task is completed.
+    get_url = response.headers.get('operation-location')
+    print("Operation Location:", get_url)
+
+    # You will receive a 202 response indicating that your task has been submitted successfully.
+    if response.status_code == 202:
+        task_running = True
+        while task_running:
+            response = requests.get(url=get_url, headers=headers)
+            response_body = response.json()
+            
+            response_status = response_body.get('status')
+            print(response_status)
+            
+            # Add a small delay to avoid consuming too much CPU
+            time.sleep(1)  # Sleep for 1 second
+            if response_status == "succeeded":
+                task_running = False
+                print(response.text)
+                # Save the predicted categories into a list of strings 
+                # Extract categories
+                categories = []
+                for entity in response_body['tasks']['items'][0]['results']['documents'][0]['entities']:
+                    categories.append(entity['category'])  
+                # Removes duplicates in the list 
+                categories = list(set(categories))
+                print(categories) 
+        return render_template("success.html")
+    else:
+        return render_template("fail.html")
+    
+      
 if __name__ == "__main__":
-    app.run()
+    app.run(debug=True)

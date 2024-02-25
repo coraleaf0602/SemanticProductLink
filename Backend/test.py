@@ -6,10 +6,6 @@ import time
 
 app = Flask(__name__)
 
-# @app.route("/")
-# def hello_world():
-#     return f"<p>{test_data}</p>"
-
 # The endpoint for authenticating your API request.
 endpoint = "https://dellsemanticproductlink.cognitiveservices.azure.com/"
 project_name = "SemanticProductLink" 

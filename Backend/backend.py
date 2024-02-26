@@ -1,8 +1,18 @@
-from flask import Flask, redirect, url_for, render_template, request, session, jsonify 
+from flask import Flask, redirect, url_for, render_template, request, session, Response
+import flask_cors
 import requests 
 import json 
 import os 
-import time 
+
+link_lookup_table = {"XPS":"https://www.dell.com/en-ie/shop/laptop-computers-2-in-1-pcs/sr/laptops/xps-laptops",
+                     "Inspiron":"https://www.dell.com/en-ie/shop/laptop-computers-2-in-1-pcs/sr/laptops/inspiron-laptops",
+                     "Laptops and 2-in-1 PC": "https://www.dell.com/en-ie/shop/laptop-computers-2-in-1-pcs/sr/laptops",
+                     "Monitors": "https://www.dell.com/en-ie/shop/everyday/sac/monitors/everyday-monitors",
+                     "Keyboards and Mice": "https://www.dell.com/en-ie/shop/keyboards/ar/8545/keyboard-mice-combos?appliedRefinements=43910",
+                     "Docking Stations": " https://www.dell.com/en-ie/shop/docks-and-stands/ar/8408",
+                     "Webcams and Video Conferencing":"https://www.dell.com/en-ie/shop/web-cameras/ar/8332",
+                      "Desktops":"https://www.dell.com/en-ie/shop/desktop-computers/sc/desktops"
+                     }
 
 app = Flask(__name__)
 
@@ -32,74 +42,43 @@ def home():
 
 # Method to call the Azure model 
 # https://learn.microsoft.com/en-us/azure/ai-services/language-service/custom-named-entity-recognition/quickstart?pivots=rest-api
-@app.route("/import", methods=["POST", "GET"])
-def importAI():
-    
-    # This data is not the same as the JSON file used to train the model, 
-    # as it does not contain labeled annotations but rather the input text 
-    # that the model will process.
-    # For example, text data from the knowledge base articles that we're using 
-    
-    # construct post request 
-    # post_url = f"{endpoint}/language/authoring/analyze-text/projects/{project_name}/:import?api-version={api_version}"
+@app.route("/start-task", methods=["POST"])
+@flask_cors.cross_origin()
+def start_task():   
     post_url = "https://dellsemanticproductlink.cognitiveservices.azure.com/language/analyze-text/jobs?api-version=2022-10-01-preview"
-   
-    # Importing the request.json file. The 'text' label hereis not the same 
-    # as the JSON file used to train the model,  as it does not contain labeled
-    # annotations but rather the input text that the model will process.
-    # For example, text data from the knowledge base articles that we're using 
-    with open("request.json", "r") as f:
-        requests_body = json.load(f)
-        
-    # Possible error scenarios for this request:
-    # 1. The selected resource doesn't have proper permissions for the storage account.
-    # 2. The storageInputContainerName specified doesn't exist.
-    # 3. Invalid language code is used, or if the language code type isn't string.
-    # 4. multilingual value is a string and not a boolean.
-    
+    requests_body = request.get_json()
     # Make POST request to Azure model endpoint 
     response = requests.post(url=post_url, headers=headers, json=requests_body)
-    # Check response status code
-    print("Response Status Code:", response.status_code)
-
-    # Check response content
-    print("Response Content:", response.text)
-
-    # Check response headers
-    print("Response Headers:", response.headers)
-    
-    # In the response headers, extract operation-location. 
-    # You can use this URL to query the task completion status and get the results when task is completed.
     get_url = response.headers.get('operation-location')
-    print("Operation Location:", get_url)
 
     # You will receive a 202 response indicating that your task has been submitted successfully.
     if response.status_code == 202:
-        task_running = True
-        while task_running:
-            response = requests.get(url=get_url, headers=headers)
-            response_body = response.json()
-            
-            response_status = response_body.get('status')
-            print(response_status)
-            
-            # Add a small delay to avoid consuming too much CPU
-            time.sleep(1)  # Sleep for 1 second
-            if response_status == "succeeded":
-                task_running = False
-                print(response.text)
-                # Save the predicted categories into a list of strings 
-                # Extract categories
-                categories = []
-                for entity in response_body['tasks']['items'][0]['results']['documents'][0]['entities']:
-                    categories.append(entity['category'])  
-                # Removes duplicates in the list 
-                categories = list(set(categories))
-                print(categories) 
-        return render_template("success.html")
+        return {"job":get_url}
     else:
-        return render_template("fail.html")
+        return Response(status=400,response={"error":"invalid JSON"})
     
-      
+@app.route("/get-task",methods=["GET"])
+@flask_cors.cross_origin()
+def get_task():     
+    get_url = request.args.get("job")
+    response = requests.get(url=get_url, headers=headers)
+    response_body = response.json()
+            
+    response_status = response_body.get('status')
+    
+    if response_status == "succeeded":
+        categories = []
+        for entity in response_body['tasks']['items'][0]['results']['documents'][0]['entities']:
+            categories.append(entity['category'])  
+        # Removes duplicates in the list 
+        categories = set(categories)
+        links = []
+        for category in categories:
+            if category in link_lookup_table.keys():
+                links.append({category:link_lookup_table[category]})
+        return {"category_links":links}
+    else:
+        return Response(status=202,response={"response-status":response_status})
+
 if __name__ == "__main__":
     app.run(debug=True)

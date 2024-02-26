@@ -11,51 +11,41 @@ link_lookup_table = {"XPS":"https://www.dell.com/en-ie/shop/laptop-computers-2-i
                      "Keyboards and Mice": "https://www.dell.com/en-ie/shop/keyboards/ar/8545/keyboard-mice-combos?appliedRefinements=43910",
                      "Docking Stations": " https://www.dell.com/en-ie/shop/docks-and-stands/ar/8408",
                      "Webcams and Video Conferencing":"https://www.dell.com/en-ie/shop/web-cameras/ar/8332",
-                      "Desktops":"https://www.dell.com/en-ie/shop/desktop-computers/sc/desktops"
+                     "Desktops":"https://www.dell.com/en-ie/shop/desktop-computers/sc/desktops"
                      }
 
 app = Flask(__name__)
 
-# The endpoint for authenticating your API request.
-endpoint = "https://dellsemanticproductlink.cognitiveservices.azure.com/"
-project_name = "SemanticProductLink" 
-api_version = "2022-10-01-preview"
-
-# unique identifier assigned to the text analysis job
-job_id = ""
 api_key = os.environ.get("API_KEY")
     
 headers = { 
-    # This specifies that the request body is in JSON format
-    "Content-Type": "application/json",  
-    # Remember to change this to an environment variable saved on Mac 
+    "Content-Type": "application/json",   
     "Ocp-Apim-Subscription-Key": api_key  
 }
-# Define the dictionary with categories as keys and lists of links as values
-database = {
-    # Add more categories and links as needed
-}
+
+with open("request.json","r") as f:
+    azure_json = json.loads(f.read())
+
+database = {}
 @app.route("/")
 def home(): 
     return render_template("basicWebsite.html")
 
 
-# Method to call the Azure model 
-# https://learn.microsoft.com/en-us/azure/ai-services/language-service/custom-named-entity-recognition/quickstart?pivots=rest-api
 @app.route("/start-task", methods=["POST"])
 @flask_cors.cross_origin()
 def start_task():   
     post_url = "https://dellsemanticproductlink.cognitiveservices.azure.com/language/analyze-text/jobs?api-version=2022-10-01-preview"
     requests_body = request.get_json()
-    # Make POST request to Azure model endpoint 
-    response = requests.post(url=post_url, headers=headers, json=requests_body)
+    azure_json["analysisInput"]["documents"][0]["text"] = requests_body["text"]
+    response = requests.post(url=post_url, headers=headers, json=azure_json)
     get_url = response.headers.get('operation-location')
 
     # You will receive a 202 response indicating that your task has been submitted successfully.
     if response.status_code == 202:
         return {"job":get_url}
     else:
-        return Response(status=400,response={"error":"invalid JSON"})
+        return Response(status=400,response=response.json())
     
 @app.route("/get-task",methods=["GET"])
 @flask_cors.cross_origin()
@@ -68,7 +58,8 @@ def get_task():
     
     if response_status == "succeeded":
         categories = []
-        for entity in response_body['tasks']['items'][0]['results']['documents'][0]['entities']:
+        entities = response_body['tasks']['items'][0]['results']['documents'][0]['entities']
+        for entity in entities:
             categories.append(entity['category'])  
         # Removes duplicates in the list 
         categories = set(categories)
@@ -77,8 +68,10 @@ def get_task():
             if category in link_lookup_table.keys():
                 links.append({category:link_lookup_table[category]})
         return {"category_links":links}
-    else:
+    elif response.status_code == 200:
         return Response(status=202,response={"response-status":response_status})
+    else:
+        return Response(status=400,response={"Unknown error occured"})
 
 if __name__ == "__main__":
     app.run(debug=True)

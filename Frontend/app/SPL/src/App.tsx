@@ -1,9 +1,9 @@
-import TextBox from "./Components/TextBox";
+import TextBox from "./TextBox";
 import "./App.css";
 //import Sidebar from "./Components/SideBar";
 //import Product from "./Components/ProductBar";
 import { SetStateAction, useState } from "react";
-import SideBar3 from "./Components/SideBar3";
+import SideBar3 from "./SideBar3";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 function App() {
@@ -27,6 +27,7 @@ function App() {
           imageSrc={"./xps2Standard.jpg"}
           onMouseOver={console.log}
           onMouseOut={console.log}
+          hh
         />*/}
       </div>
       <Router>

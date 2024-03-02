@@ -4,6 +4,29 @@ interface Props {
   displayText: (text: string) => void;
 }
 
+async function makeTask(text:string) {
+  fetch("http://127.0.0.1:5000/start-task",{
+    method:"POST",
+    headers:{
+        "Content-Type":"application/json"
+    },
+    body:JSON.stringify({"text":text})
+}).then((response) => {return response.json()}).then((data) => {
+    return new Promise((resolve) => {
+        const callback = () => { 
+            fetch(`http://127.0.0.1:5000/get-task?job=${data.job}`)
+            .then((res) => {
+                if (res.status === 200){
+                    resolve(res)
+                }
+                else{setTimeout(callback,1000)}  
+            })
+        }
+        callback()
+    })
+}).then((res:any) => {return res.json()}).then((data) => console.log(data)).catch(err => console.log(err.json()));
+}
+
 const TextBox: React.FC<Props> = ({ displayText }) => {
   const [inputText, setInputText] = useState("");
 
@@ -12,7 +35,7 @@ const TextBox: React.FC<Props> = ({ displayText }) => {
   };
 
   const handleSubmit = () => {
-    displayText(inputText);
+    makeTask(inputText);
     setInputText("");
   };
 

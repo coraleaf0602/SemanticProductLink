@@ -58,6 +58,7 @@ def start_task():
     if response.status_code == 202:
         return {"job":get_url}
     else:
+        print(response.text)
         return Response(status=400,response=response.json())
     
 @app.route("/get-task",methods=["GET"])
@@ -79,7 +80,7 @@ def get_task():
         links = []
         for category in categories:
             if category in link_lookup_table.keys():
-                links.append({category:link_lookup_table[category]})
+                links.append({"category":category,"link":link_lookup_table[category]})
         return {"category_links":links}
     elif response.status_code == 200:
         return Response(status=202,response={"response-status":response_status})

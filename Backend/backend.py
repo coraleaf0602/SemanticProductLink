@@ -3,6 +3,7 @@ import flask_cors
 import requests 
 import json 
 import os 
+import sqlite3
 
 link_lookup_table = {"Laptops and 2-in-1 PC": "https://www.dell.com/en-ie/shop/laptop-computers-2-in-1-pcs/sc/laptops", 
                     "XPS": "https://www.dell.com/en-ie/shop/laptop-computers-2-in-1-pcs/sr/laptops/xps-laptops", 
@@ -28,9 +29,17 @@ link_lookup_table = {"Laptops and 2-in-1 PC": "https://www.dell.com/en-ie/shop/l
                     }
 
 app = Flask(__name__)
+#  after run create_db.py, the database is created 
+# conn = sqlite3.connect('eneities.db')
+# cursor = conn.cursor()
+# command = 'insert into entity (Entity_Name,URL,ImagePath) VALUES (Entity_Name,URLString,ImagePath_String)'
+# cursor.execute(command)
+# cursor.close()
+# conn.close()
 
 api_key = os.environ.get("API_KEY")
-    
+
+
 headers = { 
     "Content-Type": "application/json",   
     "Ocp-Apim-Subscription-Key": api_key  

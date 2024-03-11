@@ -3,6 +3,7 @@ import flask_cors
 import requests 
 import json 
 import os 
+import sqlite3
 
 link_lookup_table = {"Laptops and 2-in-1 PC": "https://www.dell.com/en-ie/shop/laptop-computers-2-in-1-pcs/sc/laptops", 
                     "XPS": "https://www.dell.com/en-ie/shop/laptop-computers-2-in-1-pcs/sr/laptops/xps-laptops", 
@@ -28,9 +29,17 @@ link_lookup_table = {"Laptops and 2-in-1 PC": "https://www.dell.com/en-ie/shop/l
                     }
 
 app = Flask(__name__)
+#  after run create_db.py, the database is created 
+# conn = sqlite3.connect('eneities.db')
+# cursor = conn.cursor()
+# command = 'insert into entity (Entity_Name,URL,ImagePath) VALUES (Entity_Name,URLString,ImagePath_String)'
+# cursor.execute(command)
+# cursor.close()
+# conn.close()
 
 api_key = os.environ.get("API_KEY")
-    
+
+
 headers = { 
     "Content-Type": "application/json",   
     "Ocp-Apim-Subscription-Key": api_key  
@@ -58,6 +67,7 @@ def start_task():
     if response.status_code == 202:
         return {"job":get_url}
     else:
+        print(response.text)
         return Response(status=400,response=response.json())
     
 @app.route("/get-task",methods=["GET"])
@@ -79,7 +89,7 @@ def get_task():
         links = []
         for category in categories:
             if category in link_lookup_table.keys():
-                links.append({category:link_lookup_table[category]})
+                links.append({"category":category,"link":link_lookup_table[category]})
         return {"category_links":links}
     elif response.status_code == 200:
         return Response(status=202,response={"response-status":response_status})

@@ -12,6 +12,10 @@
   overflow-y: auto; /* Added to enable vertical scrolling */
 }
 
+.form-label{
+  padding: 0px 8px;
+}
+
 .BarText {
   padding: 8px 0px;
   list-style-type: none;

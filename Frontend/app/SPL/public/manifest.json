@@ -1,0 +1,21 @@
+{
+    "manifest_version": 3,
+    "name": "Writesonic",
+    "description": "Writesonic Chrome Extension",
+    "version": "1.0.0",
+    "content_scripts": [
+      {
+        "matches": ["https://www.dell.com/support/kbdoc/*"],
+        "js": ["/assets/js/initializeUI.js"],
+        "css":["/react/index.css"],
+        "run_at": "document_end",
+        "all_frames": true
+      }
+    ],
+    "web_accessible_resources": [
+      {
+        "resources": ["./alienware.jpg","/react/index.js", "/react/vendor.js", "/react/index.css"],
+        "matches": ["<all_urls>"]
+      }
+    ]
+}

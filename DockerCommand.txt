@@ -1,0 +1,2 @@
+docker build ./SwEng-Group-14-SemanticProductLink -t try1   //build images 
+docker run -d -p 8080:5000 try1       //run the container

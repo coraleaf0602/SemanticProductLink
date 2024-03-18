@@ -1,30 +1,31 @@
 
+
 import { Link } from "react-router-dom";
 //import { SideBar3Data } from "./SideBar3Data";
 import "./styles.css"
 
-function SideBar3({ responseData }:any) {
+function SideBar3({dataList}:any) {
   return (
-    <div className="SideBarDesign">
-      <ul className="nav-menu-items">
-        {responseData.map((item:any, index:number) => 
-          {return (
-            <div key={index} className="nav-text">
-              <text fontSize={12}>{item.category}</text>
-                <Link to={item.link}>
-                  <div className="ImageContainer">
-                    <img
-                      src="./alienware.jpg"
-                      alt="Image"
-                      width="140px"
-                      height="100px"
+    <ul className="nav-menu-items">
+      <div className="text-heading">
+        <text fontSize={24}>Suggested Products</text>
+      </div>
+      {dataList.map((item:any, index:number) => 
+        {return (
+          <div key={index} className="ImageContainer">
+            <text fontSize={12}>{item.category}</text>
+              <Link to={item.link}> 
+                <div>
+                  <img
+                      src={"https://cdn.britannica.com/22/215522-131-FB1512ED/green-grass-close-up.jpg"}
+                      width={100}
+                      height={100}
                     />
-                  </div>
-                </Link>
-            </div>
-          )})}
-      </ul>
-    </div>
+                </div>                 
+              </Link>
+          </div>
+        )})}
+    </ul>
   );
 }
 

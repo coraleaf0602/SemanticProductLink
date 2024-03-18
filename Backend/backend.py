@@ -67,4 +67,5 @@ def get_task():
         return Response(status=400,response={"Unknown error occured"})
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(debug=True, host='0.0.0.0', port=5000) 
+    # app.run(debug=True)

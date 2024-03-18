@@ -18,9 +18,9 @@ with open("request.json","r") as f:
     azure_json = json.loads(f.read())
 
 database = {}
-@app.route("/")
-def home(): 
-    return render_template("basicWebsite.html")
+# @app.route("/")
+# def home(): 
+#     return render_template("basicWebsite.html")
 
 
 @app.route("/start-task", methods=["POST"])
@@ -59,7 +59,7 @@ def get_task():
         for category in categories:
             row = retrieve(category)
             if (row != None):
-                links.append({"category":row[0],"link":row[1]})
+                links.append({"category":row[0],"link":row[1],"image":row[2]})
         return {"category_links":links}
     elif response.status_code == 200:
         return Response(status=202,response={"response-status":response_status})
@@ -67,5 +67,4 @@ def get_task():
         return Response(status=400,response={"Unknown error occured"})
 
 if __name__ == "__main__":
-    app.run(debug=True, host='0.0.0.0', port=5000) 
-    # app.run(debug=True)
+    app.run(debug=True)

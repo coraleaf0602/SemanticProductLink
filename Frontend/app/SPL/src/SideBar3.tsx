@@ -17,7 +17,8 @@ function SideBar3({dataList}:any) {
               <Link to={item.link}> 
                 <div>
                   <img
-                      src={"https://cdn.britannica.com/22/215522-131-FB1512ED/green-grass-close-up.jpg"}
+                      className="Image"
+                      src={item.image}
                       width={100}
                       height={100}
                     />

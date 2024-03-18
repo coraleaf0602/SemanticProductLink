@@ -1,25 +1,25 @@
 import "./App.css";
 //import Sidebar from "./Components/SideBar";
 //import Product from "./Components/ProductBar";
-import { useState, } from "react";
 import "./styles.css"
+import CircularProgress from "@mui/material/CircularProgress";
+import Box from "@mui/material/Box"
 import SideBar3 from "./SideBar3";
+import { useEffect, useState } from "react";
 
-function App() {
-  const [inputText, setInputText] = useState("");
+function App(data:any) {
   const [responseData,setResponseData] = useState([]);
+  const [finished,setFinished] = useState(false);
 
-  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setInputText(event.target.value);
-  };
-
-  function handleTextSubmit (text:string) {
-    fetch("http://127.0.0.1:5000/start-task",{
+  useEffect(() =>{
+    if(data !== "") {
+      console.log(data.data);
+      fetch("http://127.0.0.1:5000/start-task",{
       method:"POST",
       headers:{
         "Content-Type":"application/json"
       },
-      body:JSON.stringify({"text":text})
+      body:JSON.stringify({"text":data.data})
     })
     .then((response) => {return response.json()}).then((data) => {
       return new Promise((resolve) => {
@@ -36,36 +36,12 @@ function App() {
       })
     })
     .then((res:any) => {return res.json()})
-    .then((data) => {console.log(data);setResponseData(data.category_links)})
+    .then((data) => {setResponseData(data.category_links);setFinished(true)})
     .catch(err => console.error(err));
-  }
-  return (
-    <>
-      <div className="mb-3">
-      <label htmlFor="exampleFormControlInput1" className="form-label">
-        Enter Text
-      </label>
-      <input
-        type="Text"
-        className="form-control"
-        id="exampleFormControlInput1"
-        placeholder="E.G. Docking Station"
-        value={inputText}
-        onChange={handleChange}
-      />
-      <button className="btn btn-primary" onClick={(event) => {event.preventDefault();handleTextSubmit(inputText)}}>
-        Submit
-      </button>
-    </div>
-      <div>
-        {/* Display the submitted text }*/}
-        {inputText && <div>Submitted Text: {inputText}</div>}
-      </div>
-      <div>
-        <SideBar3 responseData={responseData}></SideBar3>
-      </div>
-    </>
-  );
+    }
+  },[data])
+
+  return(!finished?<Box className = "nav-menu-items"><CircularProgress /></Box>:<SideBar3 dataList={responseData}/>)
 }
 
 export default App;

@@ -1,0 +1,26 @@
+Backend/__pycache__/database.cpython-39.pyc
+
+# Logs
+Frontend/app/SPL/logs
+Frontend/app/SPL/*.log
+Frontend/app/SPL/npm-debug.log*
+Frontend/app/SPL/yarn-debug.log*
+Frontend/app/SPL/yarn-error.log*
+Frontend/app/SPL/pnpm-debug.log*
+Frontend/app/SPL/lerna-debug.log*
+
+Frontend/app/SPL/node_modules
+Frontend/app/SPL/dist
+Frontend/app/SPL/dist-ssr
+Frontend/app/SPL/*.local
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?

@@ -1,11 +1,7 @@
-import { useState } from "react";
-import * as FaIcons from "react-icons/fa";
-import * as AiIcons from "react-icons/ai";
-import * as IoIcons from "react-icons/io";
 
 export const SideBar3Data = [
   {
-    image1: "./xps2Standard.jpg",
+    image1: "./alienware.jpg",
     image2: ".xps2Dynamic.jpg",
     title: "Image1",
     path: "https://www.dell.com/en-ie",
@@ -40,5 +36,26 @@ export const SideBar3Data = [
     path: "https://www.dell.com/en-ie",
     price: "$300",
     className: "nav-text",
-  },
+  },  {
+    image1: "./alienware.jpg",
+    image2: ".xps2Dynamic.jpg",
+    title: "Image1",
+    path: "https://www.dell.com/en-ie",
+    price: "$300",
+    className: "nav-text",
+  },  {
+    image1: "./alienware.jpg",
+    image2: ".xps2Dynamic.jpg",
+    title: "Image1",
+    path: "https://www.dell.com/en-ie",
+    price: "$300",
+    className: "nav-text",
+  },  {
+    image1: "./alienware.jpg",
+    image2: ".xps2Dynamic.jpg",
+    title: "Image1",
+    path: "https://www.dell.com/en-ie",
+    price: "$300",
+    className: "nav-text",
+  }
 ];

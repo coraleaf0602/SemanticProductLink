@@ -1,0 +1,2 @@
+docker build ./SwEng-Group-14-SemanticProductLink -t image_name    //build images 
+docker run -d -p 8080:5000 image_name       //run the container, the programe will be mapped to local port 8080

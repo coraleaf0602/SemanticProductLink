@@ -6,6 +6,7 @@ import CircularProgress from "@mui/material/CircularProgress";
 import Box from "@mui/material/Box"
 import SideBar3 from "./SideBar3";
 import { useEffect, useState } from "react";
+const url = "https://demo.greenpond-fd41f303.westeurope.azurecontainerapps.io";
 
 function App(data:any) {
   const [responseData,setResponseData] = useState([]);
@@ -14,7 +15,7 @@ function App(data:any) {
   useEffect(() =>{
     if(data !== "") {
       console.log(data.data);
-      fetch("http://127.0.0.1:5000/start-task",{
+      fetch(`${url}/start-task`,{
       method:"POST",
       headers:{
         "Content-Type":"application/json"
@@ -22,14 +23,17 @@ function App(data:any) {
       body:JSON.stringify({"text":data.data})
     })
     .then((response) => {return response.json()}).then((data) => {
-      return new Promise((resolve) => {
+      return new Promise((resolve,reject) => {
+        let attempts = 0;
         const callback = () => { 
-            fetch(`http://127.0.0.1:5000/get-task?job=${data.job}`)
+            fetch(`${url}/get-task?job=${data.job}`)
             .then((res) => {
                 if (res.status === 200){
                     resolve(res)
+                } else if(attempts === 5){
+                  reject("Too many attempts");
                 }
-                else{setTimeout(callback,1000)}  
+                else{attempts++;setTimeout(callback,1000)}  
             })
         }
         callback()

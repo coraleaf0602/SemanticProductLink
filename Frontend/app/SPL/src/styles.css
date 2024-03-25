@@ -2,10 +2,11 @@
   height: 90%;
   overflow-y: scroll;
   scrollbar-width: none;
-  max-height: 700px;
+  max-height: 500px;
   width: 90%;
   border-radius: 12px;
   box-shadow: 0px 0px 50px rgba(15, 59, 252, 0.5);
+  margin-bottom: 5px;
 }
 
 .form-label{
@@ -40,29 +41,41 @@
 .nav-menu-items{
   padding-inline-start: 0px;
   width: 100%;
+  margin: 15px 0px;
+  
 }
 
 .text-heading{
-  margin-bottom: 10px;
+  border-top: 2px solid #0000FF;
+  margin-bottom: 5px;
+  border-bottom: 2px solid #0000FF;
 }
 
 .BarItems {
   width: 100%;
 }
 .ImageContainer {
+  background-color: white;
   height: 100px;
-  width: 100px;
+  width: 85%;
   /* box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.5); */
-  margin-bottom: 10px;
+  margin: 40px 0px;
+  transition: transform 0.5s;
+}
+.ImageContainer:hover{
+  transform: scale(1.15);
+ /* box-shadow: 0px 0px 12px rgba(15, 59, 252, 0.5);*/
+
 }
 
 .Image{
   width: 100px;
   height: auto; 
   max-width: 100px;
-  max-height: 100px;
-  /* transition: transform 0.5s; */
+  max-height: 75px;
+   /*transition: transform 0.5s; */
+   margin-bottom: 10px;
 }
-.Image:hover{
+/*.Image:hover{
   transform: scale(1.15);
-}
+}*/

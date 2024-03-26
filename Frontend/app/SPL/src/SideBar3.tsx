@@ -11,7 +11,7 @@ function SideBar3({ dataList }: any) {
         <text fontSize={40}>Suggested Products</text>
       </div>
       {dataList.map((item: any, index: number) => {
-        if (index < 5) {
+        if (index < 7) {
           return (
             <div key={index} className="ImageContainer">
               <text

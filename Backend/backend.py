@@ -22,6 +22,10 @@ database = {}
 # def home(): 
 #     return render_template("basicWebsite.html")
 
+def scan_input():
+    contains_inspiron = 'Inspiron' in text
+    contains_vostro = 'Vostro' in text
+    return (contains_inspiron, contains_vostro)
 
 @app.route("/start-task", methods=["POST"])
 @flask_cors.cross_origin()

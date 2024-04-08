@@ -5,8 +5,9 @@ import requests
 import json 
 import os 
 
-app = Flask(__name__)
 
+app = Flask(__name__)
+tasks = {}
 api_key = os.environ.get("API_KEY")
     
 headers = { 
@@ -22,10 +23,19 @@ database = {}
 # def home(): 
 #     return render_template("basicWebsite.html")
 
-def scan_input():
-    contains_inspiron = 'Inspiron' in text
-    contains_vostro = 'Vostro' in text
-    return (contains_inspiron, contains_vostro)
+def generate_series_links(text):
+    links = []
+    series_names = ['Inspiron', 'Vostro']
+    for series_name in series_names:
+        if series_name in text:
+            row = retrieve(series_name)
+            if row is not None:
+                links.append({
+                    'category': row[0],
+                    'url': row[1],
+                    'image_path': row[2]
+                })
+    return links
 
 @app.route("/start-task", methods=["POST"])
 @flask_cors.cross_origin()
@@ -33,11 +43,14 @@ def start_task():
     post_url = "https://dellsemanticproductlink.cognitiveservices.azure.com/language/analyze-text/jobs?api-version=2022-10-01-preview"
     requests_body = request.get_json()
     azure_json["analysisInput"]["documents"][0]["text"] = requests_body["text"]
+    input_text = requests_body.get("text", "")
+    
     response = requests.post(url=post_url, headers=headers, json=azure_json)
-    get_url = response.headers.get('operation-location')
-
+    
     # You will receive a 202 response indicating that your task has been submitted successfully.
     if response.status_code == 202:
+        get_url = response.headers.get('operation-location')
+        tasks[get_url] = generate_series_links(input_text)
         return {"job":get_url}
     else:
         print(response.text)
@@ -64,6 +77,8 @@ def get_task():
             row = retrieve(category)
             if (row != None):
                 links.append({"category":row[0],"link":row[1],"image":row[2]})
+        series_links = tasks.get(get_url, [])
+        links.extend(series_links)
         return {"category_links":links}
     elif response.status_code == 200:
         return Response(status=202,response={"response-status":response_status})

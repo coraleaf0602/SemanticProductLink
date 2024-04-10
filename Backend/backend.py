@@ -1,34 +1,35 @@
 from flask import Flask, redirect, url_for, render_template, request, session, Response
+import flask_cors.core
 from database import retrieve
 import flask_cors
-import requests 
-import json 
-import os 
+import requests
+import json
+import os
 
 app = Flask(__name__)
-
 api_key = os.environ.get("API_KEY")
-    
-headers = { 
-    "Content-Type": "application/json",   
-    "Ocp-Apim-Subscription-Key": api_key  
+cache = {}
+first_text = ""
+headers = {
+    "Content-Type": "application/json",
+    "Ocp-Apim-Subscription-Key": api_key
 }
 
 with open("request.json","r") as f:
     azure_json = json.loads(f.read())
 
-database = {}
-@app.route("/")
-def home(): 
-    return render_template("basicWebsite.html")
+# @app.route("/")
+# def home():
+#     return render_template("basicWebsite.html")
 
 
 @app.route("/start-task", methods=["POST"])
 @flask_cors.cross_origin()
-def start_task():   
+def start_task():
     post_url = "https://dellsemanticproductlink.cognitiveservices.azure.com/language/analyze-text/jobs?api-version=2022-10-01-preview"
     requests_body = request.get_json()
     azure_json["analysisInput"]["documents"][0]["text"] = requests_body["text"]
+
     response = requests.post(url=post_url, headers=headers, json=azure_json)
     get_url = response.headers.get('operation-location')
 
@@ -38,28 +39,44 @@ def start_task():
     else:
         print(response.text)
         return Response(status=400,response=response.json())
-    
+
+@app.route("/check",methods=["GET"])
+@flask_cors.cross_origin()
+def check_cache():
+    text = request.headers["text"]
+    if text in cache:
+        return {"category_links":cache[text]}
+    return Response(status=404)
+
 @app.route("/get-task",methods=["GET"])
 @flask_cors.cross_origin()
-def get_task():     
+def get_task():
+    current_text = request.headers["text"]
     get_url = request.args.get("job")
     response = requests.get(url=get_url, headers=headers)
     response_body = response.json()
-            
     response_status = response_body.get('status')
-    
     if response_status == "succeeded":
-        categories = []
+        categories = set()
         entities = response_body['tasks']['items'][0]['results']['documents'][0]['entities']
         for entity in entities:
-            categories.append(entity['category'])  
-        # Removes duplicates in the list 
-        categories = set(categories)
+            categories.add(entity['category'])
+        # Removes duplicates in the list
+        if(len(cache) == 0): first_text = current_text
+        if len(cache) == 10:
+            try:
+                del cache[first_text]
+            except KeyError:
+                cache.popitem()  
+            first_text = cache.keys()[0]          
         links = []
+        cache[current_text] = []
         for category in categories:
             row = retrieve(category)
             if (row != None):
-                links.append({"category":row[0],"link":row[1]})
+                links.append({"category":row[0],"link":row[1],"image":row[2]})
+                cache[current_text].append({"category":row[0],"link":row[1],"image":row[2]})
+
         return {"category_links":links}
     elif response.status_code == 200:
         return Response(status=202,response={"response-status":response_status})
@@ -67,5 +84,4 @@ def get_task():
         return Response(status=400,response={"Unknown error occured"})
 
 if __name__ == "__main__":
-    app.run(debug=True, host='0.0.0.0', port=5000) 
-    # app.run(debug=True)
+    app.run(debug=True)

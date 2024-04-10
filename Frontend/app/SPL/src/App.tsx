@@ -7,7 +7,7 @@ import Box from "@mui/material/Box"
 import SideBar3 from "./SideBar3";
 import { useEffect, useState } from "react";
 
-const link = "http://127.0.0.1:5000";
+const link = "https://demo.greenpond-fd41f303.westeurope.azurecontainerapps.io";
 
 function App(input_data:any) {
   const [responseData,setResponseData] = useState([]);
@@ -45,7 +45,7 @@ function App(input_data:any) {
       } return result;
       }).then((res:any) => {return res.json()}).then((data) => {setResponseData(data.category_links);setFinished(true)}).catch(err => console.error(err));
     }
-  },[input_data.data])
+  },[input_data])
 
   return(!finished?<Box className = "nav-menu-items"><CircularProgress /></Box>:<SideBar3 dataList={responseData}/>)
 }

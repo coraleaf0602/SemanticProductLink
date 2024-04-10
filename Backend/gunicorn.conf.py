@@ -1,7 +1,7 @@
 # Gunicorn configuration file
 import multiprocessing
 
-max_requests = 100
+max_requests = 1000
 max_requests_jitter = 50
 
 log_file = "-"

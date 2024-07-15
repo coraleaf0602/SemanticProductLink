@@ -1,0 +1,22 @@
+{
+    "displayName": "Extracting entities",
+    "analysisInput": {
+        "documents": [
+            {
+                "id": "1",
+                "language": "en",
+                "text": ""
+            }
+        ]
+    },
+    "tasks": [
+        {
+            "kind": "CustomEntityRecognition",
+            "taskName": "Entity Recognition",
+            "parameters": {
+                "projectName": "SemanticProductLink",
+                "deploymentName": "Test-Deployment"
+            }
+        }
+    ]
+}
